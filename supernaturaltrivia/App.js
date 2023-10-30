@@ -18,4 +18,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  questionContainer: {
+    backgroundColor: '@DDDDDD',
+    padding: 10,
+    margin: 10,
+    borderRadius: 5,
+  },
+  optionStyle:{
+    color: 'yellow',
+    padding: 5,
+  },
+  optionContainer:{
+    borderColor: 'black',
+    borderWidth: 2,
+    marginTop: 10,
+  }
+
 });
