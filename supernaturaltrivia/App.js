@@ -4,35 +4,66 @@ import { StyleSheet, Text, View } from 'react-native';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomePage from './navigation/HomePage'; // Import your screen components
+import HomePage from './navigation/HomePage'; 
 import InfoPage from './navigation/InfoPage';
 import ProfilePage from './navigation/ProfilePage';
 import SettingsPage from './navigation/SettingsPage';
+import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-  // return (
-  //   <View style={styles.container}>
-  //     <Text>Open up App.js to start working on your app!</Text>
-  //     <StatusBar style="auto" />
-  //   </View>
-  // );
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomePage} />
-        <Tab.Screen name="Info" component={InfoPage} />
-        <Tab.Screen name="Profile" component={ProfilePage} />
-        <Tab.Screen name="Settings" component={SettingsPage} />
+         <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarActiveTintColor: 'black', 
+          tabBarInactiveTintColor: 'gray', 
+          tabBarStyle: {
+            backgroundColor: '#9F0000',
+          },
+        })}
+      >
+      <Tab.Screen
+          name="Home"
+          component={HomePage}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="home" size={24} color={color} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Info"
+          component={InfoPage}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="information-circle" size={24} color={color} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfilePage}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="person" size={24} color={color} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Settings"
+          component={SettingsPage}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="settings" size={24} color={color} />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
-
-
-
-
 
 const styles = StyleSheet.create({
   container: {
