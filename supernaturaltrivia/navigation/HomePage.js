@@ -4,8 +4,8 @@ import { View, StyleSheet, ImageBackground, Image, Text, TouchableOpacity } from
 function HomePage() {
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('./images/VetalaLore.jpg')} style={styles.background_image} resizeMode="contain"/>
-      <Image source={require('./images/SupernaturalTitleImage.png')} style={styles.title_image} resizeMode="contain"/>
+      <ImageBackground source={require('../images/VetalaLore.jpg')} style={styles.background_image} resizeMode="contain"/>
+      <Image source={require('../images/SupernaturalTitleImage.png')} style={styles.title_image} resizeMode="contain"/>
       <Text style={styles.text}>Choose the Difficulty</Text>
       <TouchableOpacity style={styles.easy_button}>
         <Text style={styles.buttonText}>Dad’s Journal</Text>
