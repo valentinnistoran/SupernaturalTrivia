@@ -4,8 +4,8 @@ import { View, StyleSheet, ImageBackground, Image, Text, TouchableOpacity } from
 function HomePage() {
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('./images/VetalaLore.jpg')} style={styles.background_image} resizeMode="contain"/>
-      <Image source={require('./images/SupernaturalTitleImage.png')} style={styles.title_image} resizeMode="contain"/>
+      <ImageBackground source={require('../images/VetalaLore.jpg')} style={styles.background_image} resizeMode="contain"/>
+      <Image source={require('../images/SupernaturalTitleImage.png')} style={styles.title_image} resizeMode="contain"/>
       <Text style={styles.text}>Choose the Difficulty</Text>
       <TouchableOpacity style={styles.easy_button}>
         <Text style={styles.buttonText}>Dad’s Journal</Text>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   text: {
     position: 'absolute',
-    top: '40%',
+    top: '50%',
     fontSize: 20,
     color: 'white',
     fontFamily: 'serif',
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   easy_button: {
     position: 'absolute',
-    top: '46%',
+    top: '56%',
     backgroundColor: '#215C0C',
     width: 300,
     height: 60,
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   medium_button: {
     position: 'absolute',
-    top: '56%',
+    top: '66%',
     backgroundColor: '#CA7629',
     width: 300,
     height: 60,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   hard_button: {
     position: 'absolute',
-    top: '66%',
+    top: '76%',
     backgroundColor: '#9F0000',
     width: 300,
     height: 60,
