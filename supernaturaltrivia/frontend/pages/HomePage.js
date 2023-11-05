@@ -39,12 +39,12 @@ const styles = StyleSheet.create({
   text: {
     position: 'absolute',
     top: '40%',
-    fontSize: 20, // Set the desired font size
+    fontSize: 20,
     color: 'white',
     fontFamily: 'serif',
   },
   buttonText: {
-    fontSize: 14, // Set the desired font size
+    fontSize: 14,
     color: 'white',
     fontFamily: 'serif',
     textAlign: 'center',
