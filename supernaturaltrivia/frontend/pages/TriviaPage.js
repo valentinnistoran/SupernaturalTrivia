@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { useState } from 'react';
 
 function TriviaPage() {
 
