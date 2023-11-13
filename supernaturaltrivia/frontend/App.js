@@ -4,10 +4,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
-import HomePage from './pages/HomePage.js';
+// import HomePage from './pages/HomePage.js';
 import InfoPage from './pages/InfoPage.js';
 import ProfilePage from './pages/ProfilePage.js';
 import SettingsPage from './pages/SettingsPage.js';
+import TriviaPage from './pages/TriviaPage.js';
 
 const BottomNavigator = createBottomTabNavigator();
 
@@ -42,7 +43,7 @@ export default function App() {
                                                                           backgroundColor: '#9F0000', }, }}
       >
 
-        <BottomNavigator.Screen name="Home" component={HomePage} options={{
+        <BottomNavigator.Screen name="Home" component={TriviaPage} options={{
             tabBarIcon: ({ color }) => (
               <Ionicons name="home" size={26} color={color} />
             ),
