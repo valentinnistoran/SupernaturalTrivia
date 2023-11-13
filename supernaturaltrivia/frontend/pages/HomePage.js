@@ -1,19 +1,25 @@
 import React from 'react';
 import { View, StyleSheet, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
+// import { useNavigation } from '@react-navigation/native';
+// import TriviaPage from './TriviaPage';
 
-function HomePage() {
+
+function HomePage({ navigation }) {
+  const openTriviaPage = () => {
+    navigation.navigate('TriviaPage');
+  }
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../images/VetalaLore.jpg')} style={styles.background_image} resizeMode="contain"/>
       <Image source={require('../images/SupernaturalTitleImage.png')} style={styles.title_image} resizeMode="contain"/>
       <Text style={styles.text}>Choose the Difficulty</Text>
-      <TouchableOpacity style={styles.easy_button}>
+      <TouchableOpacity style={styles.easy_button} onPress={openTriviaPage}>
         <Text style={styles.buttonText}>Dad’s Journal</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.medium_button}>
+      <TouchableOpacity style={styles.medium_button} onPress={openTriviaPage}>
         <Text style={styles.buttonText}>Bobby’s Study Room</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.hard_button}>
+      <TouchableOpacity style={styles.hard_button} onPress={openTriviaPage}>
         <Text style={styles.buttonText}>Bunker’s Library</Text>
       </TouchableOpacity>
     </View>
