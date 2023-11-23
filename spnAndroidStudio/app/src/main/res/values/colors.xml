@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#9F0000</color>
+    <color name="orange">#CA7629</color>
+    <color name="green">#215C0C</color>
+    <color name="twitter_blue">#26a7de</color>
+    <color name="insta_pink">#d62976</color>
 </resources>
