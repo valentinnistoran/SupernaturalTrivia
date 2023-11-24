@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.example.spntrivia.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_triviaFragment"
+            app:destination="@id/navigation_trivia" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_info"
@@ -28,4 +32,11 @@
         android:name="com.example.spntrivia.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_trivia"
+        android:name="com.example.spntrivia.ui.trivia.TriviaFragment"
+        android:label="@string/title_trivia"
+        tools:layout="@layout/fragment_trivia" />
+
 </navigation>
