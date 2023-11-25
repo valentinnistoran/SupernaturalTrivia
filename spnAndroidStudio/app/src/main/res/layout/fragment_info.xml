@@ -20,18 +20,121 @@
         tools:context=".ui.info.InfoFragment">
 
         <TextView
+            android:id="@+id/officialPagesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="220dp"
+            android:fontFamily="serif"
+            android:text="Show's Official Pages"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/funFactTitle"
+            android:layout_width="205dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="serif"
+            android:text="Today's Fun Fact"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_info" />
+
+        <TextView
             android:id="@+id/text_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="64dp"
+            android:fontFamily="serif"
             android:text="@string/title_info"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <ImageButton
+            android:id="@+id/instagramButton"
+            android:layout_width="264dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/officialPagesTitle"
+            app:srcCompat="@drawable/instagram_gradient" />
+
+        <TextView
+            android:id="@+id/instagramLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="serif"
+            android:text="\@cw_supernatural"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/instagramButton"
+            app:layout_constraintEnd_toEndOf="@+id/instagramButton"
+            app:layout_constraintStart_toStartOf="@+id/instagramButton"
+            app:layout_constraintTop_toTopOf="@+id/instagramButton" />
+
+        <ImageButton
+            android:id="@+id/twitterButton"
+            android:layout_width="264dp"
+            android:layout_height="48dp"
+            android:padding="0dp"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/instagramButton"
+            app:layout_constraintVertical_bias="0.218"
+            app:srcCompat="@drawable/twitter_gradient" />
+
+        <TextView
+            android:id="@+id/twitterLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="serif"
+            android:text="\@cw_spn"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/twitterButton"
+            app:layout_constraintEnd_toEndOf="@+id/twitterButton"
+            app:layout_constraintStart_toStartOf="@+id/twitterButton"
+            app:layout_constraintTop_toTopOf="@+id/twitterButton" />
+
+        <TextView
+            android:id="@+id/funFact"
+            android:layout_width="299dp"
+            android:layout_height="230dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:background="@color/light_grey"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:maxLines="6"
+            android:text="Fun fact of the day"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/officialPagesTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/funFactTitle"
+            app:layout_constraintVertical_bias="0.181" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
