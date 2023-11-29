@@ -19,11 +19,22 @@
         android:background="@drawable/vetala_lore"
         tools:context=".ui.info.InfoFragment">
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="362dp"
+            android:layout_height="154dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/text_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_info"
+            app:layout_constraintTop_toTopOf="@+id/text_info"
+            app:srcCompat="@drawable/blood_splash" />
+
         <TextView
             android:id="@+id/officialPagesTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="220dp"
+            android:layout_marginBottom="232dp"
             android:fontFamily="serif"
             android:text="Show's Official Pages"
             android:textAlignment="center"
@@ -37,7 +48,7 @@
             android:layout_width="205dp"
             android:layout_height="37dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="72dp"
             android:fontFamily="serif"
             android:text="Today's Fun Fact"
             android:textAlignment="center"
@@ -55,7 +66,7 @@
             android:text="@string/title_info"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="36sp"
+            android:textSize="34sp"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
 
@@ -134,7 +145,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/funFactTitle"
-            app:layout_constraintVertical_bias="0.181" />
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
