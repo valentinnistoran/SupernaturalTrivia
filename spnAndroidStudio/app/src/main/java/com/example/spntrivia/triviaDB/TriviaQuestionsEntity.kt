@@ -1,4 +1,4 @@
-package com.example.spntrivia.ui.trivia.triviaDB
+package com.example.spntrivia.triviaDB
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
