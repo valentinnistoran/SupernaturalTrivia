@@ -4,4 +4,8 @@
     <string name="title_info">Info</string>
     <string name="title_profile">Profile</string>
     <string name="title_settings">Settings</string>
+    <string name="title_trivia">Trivia</string>
+
+    <string name="shared_preference_game_mode">Shared Preference Game Mode</string>
+    <string name="game_mode_key">Game Mode</string>
 </resources>
