@@ -8,6 +8,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.spntrivia.databinding.ActivityMainBinding
+import com.example.spntrivia.triviaDB.TriviaDatabase
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         if (supportActionBar != null) {
             supportActionBar!!.hide()
         }
+
+        TriviaDatabase.getDatabase(this)
 
         val navView: BottomNavigationView = binding.navView
 
