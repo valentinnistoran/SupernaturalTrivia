@@ -1,42 +1,53 @@
 package com.example.spntrivia.ui.profile
 
+import android.app.Activity
+import android.content.Intent
+import android.provider.MediaStore
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.example.spntrivia.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
 
-    private var _binding: FragmentProfileBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentProfileBinding
+    private val profileViewModel: ProfileViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.profileViewModel = profileViewModel
 
-        _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textProfile
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.profileImage.setOnClickListener {
+            openImagePicker()
         }
-        return root
+
+        return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
+            val selectedImageUri = data.data
+            binding.profileImage.setImageURI(selectedImageUri)
+        }
     }
+
+    private fun openImagePicker() {
+        val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST)
+    }
+
+
+    companion object {
+        private const val PICK_IMAGE_REQUEST = 1
+    }
+
 }
