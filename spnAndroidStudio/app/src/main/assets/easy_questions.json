@@ -1,0 +1,20 @@
+{
+  "easy_questions": [
+    {
+      "questionText": "Complete the quote: “House rules, Sammy. Driver picks the music...”",
+      "imageUrl": "https://i.ytimg.com/vi/cDcXPyISMjU/maxresdefault.jpg",
+      "correctAnswer": "“...shotgun shuts his cakehole”",
+      "wrongAnswer1": "“...I’ll interrogate the cat”",
+      "wrongAnswer2": "“...I’ll fudgin’ kill you”",
+      "wrongAnswer3": "“...I lost my shoe”"
+    },
+    {
+      "questionText": "Complete the quote: “I’m the one who gripped you tight and...”",
+      "imageUrl": "https://tvline.com/wp-content/uploads/2020/11/supernatural-castiel-intro.png",
+      "correctAnswer": "“...raised you from perdition”",
+      "wrongAnswer1": "“...saved you from hell”",
+      "wrongAnswer2": "“...hugged you”",
+      "wrongAnswer3": "“...put you back on earth”"
+    }
+  ]
+}

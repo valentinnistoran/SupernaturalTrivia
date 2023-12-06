@@ -1,0 +1,20 @@
+{
+  "medium_questions": [
+    {
+      "questionText": "What is the demon Crowley's real name?",
+      "imageUrl": "url_to_image3",
+      "correctAnswer": "Fergus",
+      "wrongAnswer1": "Azazel",
+      "wrongAnswer2": "Lilith",
+      "wrongAnswer3": "Abaddon"
+    },
+    {
+      "questionText": "Who is the King of Hell?",
+      "imageUrl": "https://deadline.com/wp-content/uploads/2017/05/mark-sheppard-supernatural-3.jpg",
+      "correctAnswer": "Crowley",
+      "wrongAnswer1": "Lucifer",
+      "wrongAnswer2": "Belphegor",
+      "wrongAnswer3": "Asmodeus"
+    }
+  ]
+}

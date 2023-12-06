@@ -1,0 +1,20 @@
+{
+  "hard_questions": [
+    {
+      "questionText": "Who is the Horseman of Death?",
+      "imageUrl": "https://pm1.aminoapps.com/6395/ad98bcb275fae82b282506eee4100c8fe8c63348_00.jpg",
+      "correctAnswer": "Death",
+      "wrongAnswer1": "War",
+      "wrongAnswer2": "Famine",
+      "wrongAnswer3": "Pestilence"
+    },
+    {
+      "questionText": "What is the Mark of Cain?",
+      "imageUrl": "https://static.wikia.nocookie.net/supernaturalfanon/images/a/a7/512px-ImageMOC-1-.jpg/revision/latest?cb=20150516155316",
+      "correctAnswer": "A curse",
+      "wrongAnswer1": "A blessing",
+      "wrongAnswer2": "A prophecy",
+      "wrongAnswer3": "A weapon"
+    }
+  ]
+}

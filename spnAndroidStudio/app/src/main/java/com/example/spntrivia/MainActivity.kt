@@ -13,6 +13,7 @@ import com.example.spntrivia.triviaDB.TriviaDatabase
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var triviaDatabase: TriviaDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             supportActionBar!!.hide()
         }
 
-        TriviaDatabase.getDatabase(this)
+        triviaDatabase = TriviaDatabase.getDatabase(this)
 
         val navView: BottomNavigationView = binding.navView
 
