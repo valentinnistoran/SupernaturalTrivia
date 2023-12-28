@@ -15,6 +15,182 @@
       "wrongAnswer1": "“...saved you from hell”",
       "wrongAnswer2": "“...hugged you”",
       "wrongAnswer3": "“...put you back on earth”"
+    },
+    {
+      "questionText": "Complete the quote: “I’m the one who gripped you tight and...”",
+      "imageUrl": "https://tvline.com/wp-content/uploads/2020/11/supernatural-castiel-intro.png",
+      "correctAnswer": "“...raised you from perdition”",
+      "wrongAnswer1": "“...saved you from hell”",
+      "wrongAnswer2": "“...hugged you”",
+      "wrongAnswer3": "“...put you back on earth”"
+    },
+    {
+      "questionText": "From which episode is the screenshot above?",
+      "imageUrl": "https://64.media.tumblr.com/1341516ca1b6d1e7a4a7bcf59e3e7663/tumblr_mqajt6CDnp1sqvo4zo1_1280.jpg",
+      "correctAnswer": "Changing Channels",
+      "wrongAnswer1": "The Third Man",
+      "wrongAnswer2": "Citizen Fangs",
+      "wrongAnswer3": "Do You Believe in Miracles?"
+    },
+    {
+      "questionText": "From which episode is the screenshot above?",
+      "imageUrl": "https://thewinchesterfamilybusiness.com/wp-content/uploads/2017/09/images_SeasonThree_MysterySpot_311vlcsnap-00040.jpg",
+      "correctAnswer": "Mystery Spot",
+      "wrongAnswer1": "Dog Dean Afternoon",
+      "wrongAnswer2": "Malleus Maleficarum",
+      "wrongAnswer3": "My Bloody Valentine"
+    },
+    {
+      "questionText": "From which episode is the screenshot above?",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BYmM1ZDUxZmMtODM5Ny00YWM1LWI5OTItODdjYTEyZDMxZjM3XkEyXkFqcGdeQXRodW1ibmFpbC1pbml0aWFsaXplcg@@._V1_.jpg",
+      "correctAnswer": "Scoobynatural",
+      "wrongAnswer1": "Hell House",
+      "wrongAnswer2": "Reading is Fundamental",
+      "wrongAnswer3": "Carry On"
+    },
+    {
+      "questionText": "How do you kill a ghost?",
+      "imageUrl": "https://i.pinimg.com/originals/a4/32/7d/a4327dcf11f1b544299b325fe3c8fa9e.jpg",
+      "correctAnswer": "Salt and burn the remains",
+      "wrongAnswer1": "Shoot it with a silver bullet",
+      "wrongAnswer2": "Exorcise it",
+      "wrongAnswer3": "Using an angel blade"
+    },
+    {
+      "questionText": "How do you kill a vampire?",
+      "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/e/e1/Super06.jpg/revision/latest?cb=20110319014547",
+      "correctAnswer": "Cut its head off",
+      "wrongAnswer1": "Throw it into the fire",
+      "wrongAnswer2": "Stab it with a gold knife",
+      "wrongAnswer3": "Impale it in a church"
+    },
+    {
+      "questionText": "How do you trap a demon?",
+      "imageUrl": "https://qph.cf2.quoracdn.net/main-qimg-343492941adb29a12a0b9a9aa2a4649f-lq",
+      "correctAnswer": "Devil’s trap",
+      "wrongAnswer1": "Holy fire ring",
+      "wrongAnswer2": "Salt ring",
+      "wrongAnswer3": "Aztec seal"
+    },
+    {
+      "questionText": "What brand is Dean's car?",
+      "imageUrl": "https://journal.classiccars.com/media/2016/11/Supernatural.jpg",
+      "correctAnswer": "1967 Chevy Impala",
+      "wrongAnswer1": "1995 Ford Mustang",
+      "wrongAnswer2": "2010 Toyota Camry",
+      "wrongAnswer3": "2018 Harley Davidson"
+    },
+    {
+      "questionText": "What is Dean afraid of?",
+      "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/d/db/DeanScreams.jpg/revision/latest?cb=20120616045918",
+      "correctAnswer": "Flying",
+      "wrongAnswer1": "Heights",
+      "wrongAnswer2": "Dogs",
+      "wrongAnswer3": "Cats"
+    },
+    {
+      "questionText": "What is Dean’s favorite dessert?",
+      "imageUrl": "https://cdn4.whatculture.com/images/2022/07/f8806e02d4e4396a-1200x675.jpg",
+      "correctAnswer": "Pie",
+      "wrongAnswer1": "Jelly",
+      "wrongAnswer2": "Snickers",
+      "wrongAnswer3": "Cake"
+    },
+    {
+      "questionText": "What is Sam afraid of?",
+      "imageUrl": "https://i.ytimg.com/vi/jC-gvsY9t1c/maxresdefault.jpg",
+      "correctAnswer": "Clowns",
+      "wrongAnswer1": "Needles",
+      "wrongAnswer2": "Dogs",
+      "wrongAnswer3": "Vampires"
+    },
+    {
+      "questionText": "What is the name of the angel who saved Dean from hell?",
+      "imageUrl": "https://www.looper.com/img/gallery/how-castiel-almost-ruined-supernatural/intro-1683314954.jpg",
+      "correctAnswer": "Castiel",
+      "wrongAnswer1": "Michael",
+      "wrongAnswer2": "Anna",
+      "wrongAnswer3": "Uriel"
+    },
+    {
+      "questionText": "What is the name of the character from the screenshot above?",
+      "imageUrl": "https://i.pinimg.com/736x/7b/83/22/7b8322a07d20a9d4dbb2a327d7fd563e.jpg",
+      "correctAnswer": "Bobby Singer",
+      "wrongAnswer1": "Dick Roman",
+      "wrongAnswer2": "Ash",
+      "wrongAnswer3": "Jo Harvelle"
+    },
+    {
+      "questionText": "What is the name of the character from the screenshot above?",
+      "imageUrl": "https://pm1.aminoapps.com/5741/19895b3083c10f007a6534ed210ab117f5f2e0a6_hq.jpg",
+      "correctAnswer": "Crowley",
+      "wrongAnswer1": "Gadreel",
+      "wrongAnswer2": "Yellow Eyes",
+      "wrongAnswer3": "Lucifer"
+    },
+    {
+      "questionText": "What is the name of the character from the screenshot above?",
+      "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/3/32/Mary2.jpg/revision/latest?cb=20110322225417&path-prefix=pt-br",
+      "correctAnswer": "Mary Winchester",
+      "wrongAnswer1": "Jo Harvelle",
+      "wrongAnswer2": "Rowena",
+      "wrongAnswer3": "Ellen Harvelle"
+    },
+    {
+      "questionText": "What is the name of the nephilim that the Winchesters adopted?",
+      "imageUrl": "https://i0.wp.com/www.nerdsandbeyond.com/wp-content/uploads/2020/09/SPNLookbackJack-e1601339699272.jpeg?fit=800%2C450&ssl=1",
+      "correctAnswer": "Jack",
+      "wrongAnswer1": "Victor",
+      "wrongAnswer2": "Alex",
+      "wrongAnswer3": "Josh"
+    },
+    {
+      "questionText": "What is the name of the oldest Winchester brother?",
+      "imageUrl": "https://i0.wp.com/www.angelinchains.com/wp-content/gallery/spn9-08-episoden-stills/002.jpg",
+      "correctAnswer": "Dean",
+      "wrongAnswer1": "Henry",
+      "wrongAnswer2": "Sam",
+      "wrongAnswer3": "John"
+    },
+    {
+      "questionText": "What is the name of the youngest Winchester brother?",
+      "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/2/2a/Sam12X10.jpg/revision/latest?cb=20170127211033",
+      "correctAnswer": "Sam",
+      "wrongAnswer1": "Henry",
+      "wrongAnswer2": "Dean",
+      "wrongAnswer3": "John"
+    },
+    {
+      "questionText": "What is the plot of the first season?",
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/5b542264e7494046d36af4f6/1532838807956-2E4RMKQ44ZRW8OHM48YK/SN+Season+1+0123.jpg?format=1500w",
+      "correctAnswer": "Finding John Winchester",
+      "wrongAnswer1": "Defeating Lucifer",
+      "wrongAnswer2": "Retrieving Sam’s soul",
+      "wrongAnswer3": "Closing the gates of Hell"
+    },
+    {
+      "questionText": "What monster dominates season 7?",
+      "imageUrl": "https://i.pinimg.com/736x/a0/62/d0/a062d080bdc6c6fa036408de7cfe7a28.jpg",
+      "correctAnswer": "Leviathans",
+      "wrongAnswer1": "Ghouls",
+      "wrongAnswer2": "Vampires",
+      "wrongAnswer3": "Shapeshifters"
+    },
+    {
+      "questionText": "Who is the true vessel of Lucifer?",
+      "imageUrl": "https://static.wikia.nocookie.net/villains/images/c/c8/Lucifer_The_Empty.webp/revision/latest?cb=20230213184946",
+      "correctAnswer": "Sam Winchester",
+      "wrongAnswer1": "Jack Kline",
+      "wrongAnswer2": "Nick",
+      "wrongAnswer3": "Crowley"
+    },
+    {
+      "questionText": "Who is the true vessel of Michael?",
+      "imageUrl": "https://static1.srcdn.com/wordpress/wp-content/uploads/2018/10/Supernatural-Dean-as-Michael-with-wings.jpg",
+      "correctAnswer": "Dean Winchester",
+      "wrongAnswer1": "Bobby Singer",
+      "wrongAnswer2": "Jimmy Novak",
+      "wrongAnswer3": "Charlie Bradbury"
     }
   ]
 }
