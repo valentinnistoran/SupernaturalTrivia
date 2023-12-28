@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -52,6 +51,7 @@ class TriviaFragment : Fragment() {
         )
         val difficultyLevel = sharedPreferences.getInt(getString(R.string.game_mode_key), 1)
         triviaViewModel.loadQuestions(requireContext(), difficultyLevel)
+
     }
 
     private fun showQuitDialog() {

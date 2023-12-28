@@ -69,11 +69,23 @@
             android:id="@+id/quiz_image"
             android:layout_width="300dp"
             android:layout_height="175dp"
+            app:imageUrl="@{triviaViewModel.questions[triviaViewModel.currentQuestionIndex].imageUrl}"
             app:layout_constraintBottom_toTopOf="@id/quiz_question"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/quiz_timer"
-            app:srcCompat="@drawable/dean_judging_us" />
+            app:layout_constraintTop_toBottomOf="@id/quiz_timer" />
+
+        <TextView
+            android:id="@+id/quiz_image_credit"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:autoLink="web"
+            android:text='@{"credit: " + triviaViewModel.questions[triviaViewModel.currentQuestionIndex].imageUrl}'
+            android:textSize="6sp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/quiz_image"
+            app:layout_constraintStart_toStartOf="@id/quiz_image" />
 
         <TextView
             android:id="@+id/quiz_question"

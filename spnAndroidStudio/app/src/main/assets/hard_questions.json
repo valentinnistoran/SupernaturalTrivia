@@ -96,8 +96,8 @@
     "wrongAnswer3": "“Dagon”"
   },
   {
-    "questionText": "What is the name of the demon who tricks Sam into letting Lucifer out of the cage? https://www.comingsoon.net/wp-content/uploads/2020/03/ruby.jpg?w=800",
-    "imageUrl": "“Ruby”",
+    "questionText": "What is the name of the demon who tricks Sam into letting Lucifer out of the cage?",
+    "imageUrl": "https://www.comingsoon.net/wp-content/uploads/2020/03/ruby.jpg?w=800",
     "correctAnswer": "“Ruby”",
     "wrongAnswer1": "“Jo”",
     "wrongAnswer2": "“Bela”",

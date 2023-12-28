@@ -41,7 +41,20 @@ class TriviaViewModel : ViewModel() {
             val questionListType = object : TypeToken<List<QuestionTrivia>>() {}.type
             val questionsJson = Gson().fromJson<List<QuestionTrivia>>(json, questionListType)
 
-            questions = questionsJson.shuffled()
+            questions = questionsJson.map { question ->
+                val imageUrl = question.imageUrl
+                val correctAnswer = question.correctAnswer
+                val wrongAnswer1 = question.wrongAnswer1
+                val wrongAnswer2 = question.wrongAnswer2
+                val wrongAnswer3 = question.wrongAnswer3
+                question.copy(
+                    imageUrl = imageUrl,
+                    correctAnswer = correctAnswer,
+                    wrongAnswer1 = wrongAnswer1,
+                    wrongAnswer2 = wrongAnswer2,
+                    wrongAnswer3 = wrongAnswer3
+                )
+            }.shuffled()
         } catch (e: IOException) {
             e.printStackTrace()
         }
