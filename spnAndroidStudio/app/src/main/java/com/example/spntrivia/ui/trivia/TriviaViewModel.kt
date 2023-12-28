@@ -2,6 +2,7 @@ package com.example.spntrivia.ui.trivia
 
 
 import android.content.Context
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.spntrivia.triviaDB.QuestionTrivia
 import com.google.gson.Gson
@@ -11,6 +12,9 @@ import java.io.IOException
 class TriviaViewModel : ViewModel() {
     var questions: List<QuestionTrivia> = emptyList()
     var currentQuestionIndex: Int = 0
+    val onNextButtonClicked = MutableLiveData(false)
+    val onSkipButtonClicked = MutableLiveData(false)
+    val onQuitButtonClicked = MutableLiveData(false)
 
     fun loadQuestions(context: Context, difficultyLevel: Int) {
         val fileName = when (difficultyLevel) {
@@ -28,11 +32,21 @@ class TriviaViewModel : ViewModel() {
             val questionListType = object : TypeToken<List<QuestionTrivia>>() {}.type
             val questionsJson = Gson().fromJson<List<QuestionTrivia>>(json, questionListType)
 
-            // Shuffle the questions to get a random order
             questions = questionsJson.shuffled()
         } catch (e: IOException) {
-            // Handle IOException (e.g., file not found, JSON parsing error)
             e.printStackTrace()
         }
+    }
+
+    fun onClickNextButton() {
+        onNextButtonClicked.value = true
+    }
+
+    fun onClickSkipButton() {
+        onSkipButtonClicked.value = true
+    }
+
+    fun onClickQuitButton() {
+        onQuitButtonClicked.value = true
     }
 }
