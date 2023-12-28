@@ -15,27 +15,62 @@ class QuizDatabaseCallback(private val context: Context) : RoomDatabase.Callback
     override fun onCreate(db: SupportSQLiteDatabase) {
         super.onCreate(db)
         GlobalScope.launch(Dispatchers.IO) {
-            // Load questions from JSON and populate the database
-            val questions = loadQuestionsFromJson(context, "easy_questions.json")
-            val triviaDao =
-                Room.databaseBuilder(context, TriviaDatabase::class.java, "trivia_database")
-                    .build().easyQuestionsDao()
-            triviaDao.insertAll(questions)
+            insertQuestions(context, "easy_questions.json") { questions ->
+                insertEasyQuestions(questions)
+            }
+
+            insertQuestions(context, "medium_questions.json") { questions ->
+                insertMediumQuestions(questions)
+            }
+
+            insertQuestions(context, "hard_questions.json") { questions ->
+                insertHardQuestions(questions)
+            }
         }
     }
 
-    private fun loadQuestionsFromJson(context: Context, fileName: String): List<EasyQuestions> {
+    private suspend fun insertQuestions(
+        context: Context,
+        fileName: String,
+        insertFunction: suspend (List<Question>) -> Unit
+    ) {
         val json: String? = try {
-            // Read the JSON file from assets
             context.assets.open(fileName).bufferedReader().use { it.readText() }
         } catch (ioException: IOException) {
             ioException.printStackTrace()
             null
         }
 
-        // Parse JSON into a list of EasyQuestions objects using Gson
-        return Gson().fromJson(json, object : TypeToken<List<EasyQuestions>>() {}.type)
+        val questions = Gson().fromJson<List<Question>>(json, object : TypeToken<List<Question>>() {}.type)
             ?: emptyList()
 
+        insertFunction(questions)
+    }
+
+    private suspend fun insertEasyQuestions(questions: List<Question>) {
+        val triviaDao = Room.databaseBuilder(
+            context,
+            TriviaDatabase::class.java,
+            "trivia_database"
+        ).build().easyQuestionsDao()
+        triviaDao.insertAllEasyQuestions(questions as List<EasyQuestions>)
+    }
+
+    private suspend fun insertMediumQuestions(questions: List<Question>) {
+        val triviaDao = Room.databaseBuilder(
+            context,
+            TriviaDatabase::class.java,
+            "trivia_database"
+        ).build().mediumQuestionDao()
+        triviaDao.insertAllMediumQuestions(questions as List<MediumQuestions>)
+    }
+
+    private suspend fun insertHardQuestions(questions: List<Question>) {
+        val triviaDao = Room.databaseBuilder(
+            context,
+            TriviaDatabase::class.java,
+            "trivia_database"
+        ).build().hardQuestionDao()
+        triviaDao.insertAllHardQuestions(questions as List<HardQuestions>)
     }
 }
