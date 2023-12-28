@@ -1,4 +1,5 @@
 package com.example.spntrivia.ui.home
+
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -11,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.spntrivia.R
 import com.example.spntrivia.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class HomeFragment : Fragment() {
@@ -46,42 +48,45 @@ class HomeFragment : Fragment() {
     private fun easyModeObserver() {
         homeViewModel.onEasyButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
-                val editor = sharedPreferences.edit()
-                editor.putInt(getString(R.string.game_mode_key),1)//1 for easy mode
-                editor.apply()
-                findNavController().navigate(R.id.action_homeFragment_to_triviaFragment)
+                hideBottomNavigation()
+                navigateToTriviaFragment(1) // 1 for easy mode
                 Toast.makeText(requireContext(), "From Easy", Toast.LENGTH_LONG).show()
                 homeViewModel.onEasyButtonClicked.value = false
             }
-
         }
     }
 
     private fun mediumModeObserver() {
         homeViewModel.onMediumButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
-                val editor = sharedPreferences.edit()
-                editor.putInt(getString(R.string.game_mode_key),2)//2 for medium mode
-                editor.apply()
-                findNavController().navigate(R.id.action_homeFragment_to_triviaFragment)
+                hideBottomNavigation()
+                navigateToTriviaFragment(2) // 2 for medium mode
                 Toast.makeText(requireContext(), "From Medium", Toast.LENGTH_LONG).show()
                 homeViewModel.onMediumButtonClicked.value = false
             }
-
         }
     }
 
     private fun hardModeObserver() {
         homeViewModel.onHardButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
-                val editor = sharedPreferences.edit()
-                editor.putInt(getString(R.string.game_mode_key),3)//3 for hard mode
-                editor.apply()
-                findNavController().navigate(R.id.action_homeFragment_to_triviaFragment)
+                hideBottomNavigation()
+                navigateToTriviaFragment(3) // 3 for hard mode
                 Toast.makeText(requireContext(), "From Hard", Toast.LENGTH_LONG).show()
                 homeViewModel.onHardButtonClicked.value = false
             }
-
         }
+    }
+
+    private fun hideBottomNavigation() {
+        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        bottomNavigationView?.visibility = View.GONE
+    }
+
+    private fun navigateToTriviaFragment(gameMode: Int) {
+        val editor = sharedPreferences.edit()
+        editor.putInt(getString(R.string.game_mode_key), gameMode)
+        editor.apply()
+        findNavController().navigate(R.id.action_homeFragment_to_triviaFragment)
     }
 }
