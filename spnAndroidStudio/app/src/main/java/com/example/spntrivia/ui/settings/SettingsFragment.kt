@@ -45,7 +45,8 @@ class SettingsFragment : Fragment() {
         settingsViewModel.onHelpButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 val helpView: TextView = binding.root.findViewById(R.id.helpView)
-                val helpViewCloseButton: Button = binding.root.findViewById(R.id.helpViewCloseButton)
+                val helpViewCloseButton: Button =
+                    binding.root.findViewById(R.id.helpViewCloseButton)
                 val helpButton: Button = binding.root.findViewById(R.id.shareButton)
                 val aboutUsButton: Button = binding.root.findViewById(R.id.aboutUsButton)
                 val shareButton: Button = binding.root.findViewById(R.id.helpButton)
@@ -72,13 +73,18 @@ class SettingsFragment : Fragment() {
     private fun aboutUsButtonObserver() {
         settingsViewModel.onAboutUsButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
-                val uri: Uri = Uri.parse("https://docs.google.com/document/d/1CVgCKn5SMcYJs88_MW5HRsw20OcJanPgDlgCzDwBZLs/edit?usp=sharing")
+                val uri: Uri =
+                    Uri.parse("https://docs.google.com/document/d/1Dhmuhbp97Jo7A0QBzf4LvDxrnO-l2MrWDXZPyNqtNIg/edit?usp=sharing")
                 val intent = Intent(Intent.ACTION_VIEW, uri)
 
                 try {
                     startActivity(intent)
                 } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(requireContext(), "The About Us file can't be opened.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "The About Us file can't be opened.",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
 
@@ -92,7 +98,7 @@ class SettingsFragment : Fragment() {
                     action = Intent.ACTION_SEND
                     putExtra(
                         Intent.EXTRA_TEXT,
-                        "Check out my new app, SPN TRIVIA! https://docs.google.com/document/d/1CVgCKn5SMcYJs88_MW5HRsw20OcJanPgDlgCzDwBZLs/edit?usp=sharing"
+                        "Check out my new app, SPN TRIVIA! https://docs.google.com/document/d/1Dhmuhbp97Jo7A0QBzf4LvDxrnO-l2MrWDXZPyNqtNIg/edit?usp=sharing"
                     )
                     type = "text/plain"
                 }
@@ -101,7 +107,11 @@ class SettingsFragment : Fragment() {
                 try {
                     startActivity(shareIntent)
                 } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(requireContext(), "No app available for sharing", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "No app available for sharing",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
 

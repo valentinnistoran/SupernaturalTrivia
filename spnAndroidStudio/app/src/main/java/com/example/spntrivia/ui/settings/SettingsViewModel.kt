@@ -15,15 +15,15 @@ class SettingsViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-    fun onClickHelpButton(){
-        onHelpButtonClicked.value=true
+    fun onClickHelpButton() {
+        onHelpButtonClicked.value = true
     }
 
-    fun onClickAboutUsButton(){
-        onAboutUsButtonClicked.value=true
+    fun onClickAboutUsButton() {
+        onAboutUsButtonClicked.value = true
     }
 
-    fun onClickShareButton(){
-        onShareButtonClicked.value=true
+    fun onClickShareButton() {
+        onShareButtonClicked.value = true
     }
 }

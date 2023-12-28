@@ -45,6 +45,11 @@ class HomeFragment : Fragment() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        showBottomNavigation()
+    }
+
     private fun easyModeObserver() {
         homeViewModel.onEasyButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
@@ -81,6 +86,11 @@ class HomeFragment : Fragment() {
     private fun hideBottomNavigation() {
         val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         bottomNavigationView?.visibility = View.GONE
+    }
+
+    private fun showBottomNavigation() {
+        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        bottomNavigationView?.visibility = View.VISIBLE
     }
 
     private fun navigateToTriviaFragment(gameMode: Int) {

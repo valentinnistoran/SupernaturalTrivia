@@ -10,11 +10,20 @@ import com.google.gson.reflect.TypeToken
 import java.io.IOException
 
 class TriviaViewModel : ViewModel() {
+    val onQuitButtonClicked = MutableLiveData(false)
+    val onSkipButtonClicked = MutableLiveData(false)
+
     var questions: List<QuestionTrivia> = emptyList()
     var currentQuestionIndex: Int = 0
     val onNextButtonClicked = MutableLiveData(false)
-    val onSkipButtonClicked = MutableLiveData(false)
-    val onQuitButtonClicked = MutableLiveData(false)
+
+    fun onClickQuitButton() {
+        onQuitButtonClicked.value = true
+    }
+
+    fun onClickSkipButton() {
+        onSkipButtonClicked.value = true
+    }
 
     fun loadQuestions(context: Context, difficultyLevel: Int) {
         val fileName = when (difficultyLevel) {
@@ -40,13 +49,5 @@ class TriviaViewModel : ViewModel() {
 
     fun onClickNextButton() {
         onNextButtonClicked.value = true
-    }
-
-    fun onClickSkipButton() {
-        onSkipButtonClicked.value = true
-    }
-
-    fun onClickQuitButton() {
-        onQuitButtonClicked.value = true
     }
 }

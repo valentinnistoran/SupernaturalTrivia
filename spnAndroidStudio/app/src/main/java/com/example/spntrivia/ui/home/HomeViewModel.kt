@@ -15,15 +15,15 @@ class HomeViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-    fun onClickEasyButton(){
-        onEasyButtonClicked.value=true
+    fun onClickEasyButton() {
+        onEasyButtonClicked.value = true
     }
 
-    fun onClickMediumButton(){
-        onMediumButtonClicked.value=true
+    fun onClickMediumButton() {
+        onMediumButtonClicked.value = true
     }
 
-    fun onClickHardButton(){
-        onHardButtonClicked.value=true
+    fun onClickHardButton() {
+        onHardButtonClicked.value = true
     }
 }
