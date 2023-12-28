@@ -1,4 +1,5 @@
 package com.example.spntrivia.ui.home
+
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -47,7 +48,7 @@ class HomeFragment : Fragment() {
         homeViewModel.onEasyButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 val editor = sharedPreferences.edit()
-                editor.putInt(getString(R.string.game_mode_key),1)//1 for easy mode
+                editor.putInt(getString(R.string.game_mode_key), 1)//1 for easy mode
                 editor.apply()
                 findNavController().navigate(R.id.action_homeFragment_to_triviaFragment)
                 Toast.makeText(requireContext(), "From Easy", Toast.LENGTH_LONG).show()
@@ -61,7 +62,7 @@ class HomeFragment : Fragment() {
         homeViewModel.onMediumButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 val editor = sharedPreferences.edit()
-                editor.putInt(getString(R.string.game_mode_key),2)//2 for medium mode
+                editor.putInt(getString(R.string.game_mode_key), 2)//2 for medium mode
                 editor.apply()
                 findNavController().navigate(R.id.action_homeFragment_to_triviaFragment)
                 Toast.makeText(requireContext(), "From Medium", Toast.LENGTH_LONG).show()
@@ -75,7 +76,7 @@ class HomeFragment : Fragment() {
         homeViewModel.onHardButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 val editor = sharedPreferences.edit()
-                editor.putInt(getString(R.string.game_mode_key),3)//3 for hard mode
+                editor.putInt(getString(R.string.game_mode_key), 3)//3 for hard mode
                 editor.apply()
                 findNavController().navigate(R.id.action_homeFragment_to_triviaFragment)
                 Toast.makeText(requireContext(), "From Hard", Toast.LENGTH_LONG).show()

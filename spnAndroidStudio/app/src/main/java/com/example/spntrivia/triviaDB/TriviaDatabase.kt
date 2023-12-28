@@ -20,7 +20,6 @@ abstract class TriviaDatabase : RoomDatabase() {
         private var Instance: TriviaDatabase? = null
 
         fun getDatabase(context: Context): TriviaDatabase {
-            // if the Instance is not null, return it, otherwise create a new database instance.
             return Instance ?: synchronized(this) {
                 Room.databaseBuilder(context, TriviaDatabase::class.java, "trivia_database")
                     .build().also { Instance = it }
