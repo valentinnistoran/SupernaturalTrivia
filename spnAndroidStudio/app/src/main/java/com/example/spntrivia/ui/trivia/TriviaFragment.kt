@@ -28,6 +28,11 @@ class TriviaFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.triviaViewModel = triviaViewModel
 
+        triviaViewModel.questionsAnswered.observe(viewLifecycleOwner) { answeredCount ->
+            binding.quizNumber.text = Integer.toString(answeredCount)
+            binding.executePendingBindings()
+        }
+
         loadQuestions()
         quitButtonObserver()
 
@@ -62,6 +67,7 @@ class TriviaFragment : Fragment() {
                 dialog.dismiss()
             }
             .setNegativeButton("Yes") { _, _ ->
+                triviaViewModel.confirmQuit()
                 findNavController().popBackStack(R.id.navigation_home, false)
             }
             .show()

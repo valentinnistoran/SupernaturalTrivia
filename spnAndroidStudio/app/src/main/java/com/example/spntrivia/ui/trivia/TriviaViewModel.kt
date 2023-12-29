@@ -12,6 +12,7 @@ import java.io.IOException
 class TriviaViewModel : ViewModel() {
     val onQuitButtonClicked = MutableLiveData(false)
     val onSkipButtonClicked = MutableLiveData(false)
+    val questionsAnswered = MutableLiveData(1)
 
     var questions: List<QuestionTrivia> = emptyList()
     var currentQuestionIndex: Int = 0
@@ -21,11 +22,17 @@ class TriviaViewModel : ViewModel() {
         onQuitButtonClicked.value = true
     }
 
+    fun confirmQuit() {
+        questionsAnswered.value = 1
+    }
+
     fun onClickSkipButton() {
         onSkipButtonClicked.value = true
+        answeredQuestions()
     }
 
     fun loadQuestions(context: Context, difficultyLevel: Int) {
+        questionsAnswered.value = 1
         val fileName = when (difficultyLevel) {
             1 -> "easy_questions.json"
             2 -> "medium_questions.json"
@@ -62,5 +69,14 @@ class TriviaViewModel : ViewModel() {
 
     fun onClickNextButton() {
         onNextButtonClicked.value = true
+        answeredQuestions()
+    }
+
+    private fun answeredQuestions() {
+        questionsAnswered.value = questionsAnswered.value?.plus(1)
+        if (questionsAnswered.value == 11) {
+            questionsAnswered.value = 1
+        }
+
     }
 }

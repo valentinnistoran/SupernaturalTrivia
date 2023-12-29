@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="Number/10"
+            android:text='@{String.valueOf(triviaViewModel.questionsAnswered) + "/10"}'
             app:layout_constraintBottom_toTopOf="@id/quiz_timer"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -79,13 +79,13 @@
             android:id="@+id/quiz_image_credit"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:fontFamily="serif"
             android:autoLink="web"
+            android:fontFamily="serif"
             android:text='@{"credit: " + triviaViewModel.questions[triviaViewModel.currentQuestionIndex].imageUrl}'
-            android:textSize="6sp"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/quiz_image"
-            app:layout_constraintStart_toStartOf="@id/quiz_image" />
+            android:textSize="6sp"
+            app:layout_constraintStart_toStartOf="@id/quiz_image"
+            app:layout_constraintTop_toBottomOf="@id/quiz_image" />
 
         <TextView
             android:id="@+id/quiz_question"
