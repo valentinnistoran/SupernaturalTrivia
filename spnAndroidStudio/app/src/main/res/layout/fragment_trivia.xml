@@ -69,7 +69,7 @@
             android:id="@+id/quiz_image"
             android:layout_width="300dp"
             android:layout_height="175dp"
-            app:imageUrl="@{triviaViewModel.questions[triviaViewModel.currentQuestionIndex].imageUrl}"
+            app:imageUrl="@{triviaViewModel.triviaQuestionLiveData.imageUrl}"
             app:layout_constraintBottom_toTopOf="@id/quiz_question"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:autoLink="web"
             android:fontFamily="serif"
-            android:text='@{"credit: " + triviaViewModel.questions[triviaViewModel.currentQuestionIndex].imageUrl}'
+            android:text='@{"credit: " + triviaViewModel.triviaQuestionLiveData.imageUrl}'
             android:textColor="@color/white"
             android:textSize="6sp"
             app:layout_constraintStart_toStartOf="@id/quiz_image"
@@ -92,7 +92,7 @@
             android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="@{triviaViewModel.questions[triviaViewModel.currentQuestionIndex].questionText}"
+            android:text="@{triviaViewModel.triviaQuestionLiveData.questionText}"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/answer1"
             app:layout_constraintLeft_toLeftOf="parent"

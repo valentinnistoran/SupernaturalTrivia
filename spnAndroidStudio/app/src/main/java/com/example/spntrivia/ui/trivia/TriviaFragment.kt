@@ -2,6 +2,7 @@ package com.example.spntrivia.ui.trivia
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,12 +30,15 @@ class TriviaFragment : Fragment() {
         binding.triviaViewModel = triviaViewModel
 
         triviaViewModel.questionsAnswered.observe(viewLifecycleOwner) { answeredCount ->
+            Log.d("TriviaFragment", "Answered question count: $answeredCount")
+
             binding.quizNumber.text = Integer.toString(answeredCount)
             binding.executePendingBindings()
         }
 
         loadQuestions()
         quitButtonObserver()
+        skipButtonObserver()
 
         return binding.root
     }
@@ -82,5 +86,13 @@ class TriviaFragment : Fragment() {
         }
     }
 
+    private fun skipButtonObserver() {
+        triviaViewModel.onSkipButtonClicked.observe(viewLifecycleOwner) { isClicked ->
+            if (isClicked) {
+                triviaViewModel.loadNextQuestion()
+                triviaViewModel.onSkipButtonClicked.value = false
+            }
 
+        }
+    }
 }

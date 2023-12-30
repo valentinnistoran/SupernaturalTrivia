@@ -16,6 +16,9 @@ class TriviaViewModel : ViewModel() {
 
     var questions: List<QuestionTrivia> = emptyList()
     var currentQuestionIndex: Int = 0
+    val triviaQuestionLiveData = MutableLiveData<QuestionTrivia>()
+
+
     val onNextButtonClicked = MutableLiveData(false)
 
     fun onClickQuitButton() {
@@ -28,7 +31,9 @@ class TriviaViewModel : ViewModel() {
 
     fun onClickSkipButton() {
         onSkipButtonClicked.value = true
+        loadNextQuestion()
         answeredQuestions()
+
     }
 
     fun loadQuestions(context: Context, difficultyLevel: Int) {
@@ -62,6 +67,7 @@ class TriviaViewModel : ViewModel() {
                     wrongAnswer3 = wrongAnswer3
                 )
             }.shuffled()
+            loadNextQuestion()
         } catch (e: IOException) {
             e.printStackTrace()
         }
@@ -77,6 +83,23 @@ class TriviaViewModel : ViewModel() {
         if (questionsAnswered.value == 11) {
             questionsAnswered.value = 1
         }
-
     }
+
+    fun loadNextQuestion() {
+        currentQuestionIndex++
+        if (currentQuestionIndex <= questions.size) {
+            loadQuestionAtIndex(currentQuestionIndex)
+        } else {
+            //go to end page
+        }
+    }
+
+    private fun loadQuestionAtIndex(index: Int) {
+        if (index in questions.indices) {
+            val question = questions[index]
+            triviaQuestionLiveData.value = question
+        }
+    }
+
+
 }
