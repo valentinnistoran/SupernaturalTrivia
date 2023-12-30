@@ -75,6 +75,7 @@ class TriviaViewModel : ViewModel() {
 
     fun onClickNextButton() {
         onNextButtonClicked.value = true
+        loadNextQuestion()
         answeredQuestions()
     }
 
@@ -82,6 +83,7 @@ class TriviaViewModel : ViewModel() {
         questionsAnswered.value = questionsAnswered.value?.plus(1)
         if (questionsAnswered.value == 11) {
             questionsAnswered.value = 1
+            //go to end page
         }
     }
 

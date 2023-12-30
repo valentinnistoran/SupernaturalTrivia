@@ -39,6 +39,7 @@ class TriviaFragment : Fragment() {
         loadQuestions()
         quitButtonObserver()
         skipButtonObserver()
+        nextButtonObserver()
 
         return binding.root
     }
@@ -91,6 +92,16 @@ class TriviaFragment : Fragment() {
             if (isClicked) {
                 triviaViewModel.loadNextQuestion()
                 triviaViewModel.onSkipButtonClicked.value = false
+            }
+
+        }
+    }
+
+    private fun nextButtonObserver() {
+        triviaViewModel.onNextButtonClicked.observe(viewLifecycleOwner) { isClicked ->
+            if (isClicked) {
+                triviaViewModel.loadNextQuestion()
+                triviaViewModel.onNextButtonClicked.value = false
             }
 
         }
