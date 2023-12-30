@@ -40,6 +40,10 @@ class TriviaFragment : Fragment() {
         quitButtonObserver()
         skipButtonObserver()
         nextButtonObserver()
+        answer1ButtonObserver()
+        answer2ButtonObserver()
+        answer3ButtonObserver()
+        answer4ButtonObserver()
 
         return binding.root
     }
@@ -78,6 +82,8 @@ class TriviaFragment : Fragment() {
             .show()
     }
 
+
+    //button observers
     private fun quitButtonObserver() {
         triviaViewModel.onQuitButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
@@ -104,6 +110,42 @@ class TriviaFragment : Fragment() {
                 triviaViewModel.onNextButtonClicked.value = false
             }
 
+        }
+    }
+
+    private fun answer1ButtonObserver() {
+        triviaViewModel.onAnswer1ButtonClicked.observe(viewLifecycleOwner) { isClicked ->
+            if (isClicked) {
+                triviaViewModel.isRightAnswer()
+                triviaViewModel.onAnswer1ButtonClicked.value = false
+            }
+        }
+    }
+
+    private fun answer2ButtonObserver() {
+        triviaViewModel.onAnswer2ButtonClicked.observe(viewLifecycleOwner) { isClicked ->
+            if (isClicked) {
+                triviaViewModel.isRightAnswer()
+                triviaViewModel.onAnswer2ButtonClicked.value = false
+            }
+        }
+    }
+
+    private fun answer3ButtonObserver() {
+        triviaViewModel.onAnswer3ButtonClicked.observe(viewLifecycleOwner) { isClicked ->
+            if (isClicked) {
+                triviaViewModel.isRightAnswer()
+                triviaViewModel.onAnswer3ButtonClicked.value = false
+            }
+        }
+    }
+
+    private fun answer4ButtonObserver() {
+        triviaViewModel.onAnswer4ButtonClicked.observe(viewLifecycleOwner) { isClicked ->
+            if (isClicked) {
+                triviaViewModel.isRightAnswer()
+                triviaViewModel.onAnswer4ButtonClicked.value = false
+            }
         }
     }
 }

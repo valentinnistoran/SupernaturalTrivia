@@ -101,51 +101,55 @@
 
         <Button
             android:id="@+id/answer1"
-            android:layout_width="wrap_content"
+            android:layout_width="300sp"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="Answer1"
+            android:onClick="@{()->triviaViewModel.onClickAnswer1Button()}"
+            android:text="@{triviaViewModel.triviaQuestionLiveData.correctAnswer}"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/answer3"
+            app:layout_constraintBottom_toTopOf="@id/answer2"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/answer2"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/quiz_question" />
 
         <Button
             android:id="@+id/answer2"
-            android:layout_width="wrap_content"
+            android:layout_width="300sp"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="Answer2"
+            android:onClick="@{()->triviaViewModel.onClickAnswer2Button()}"
+            android:text="@{triviaViewModel.triviaQuestionLiveData.wrongAnswer1}"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/answer4"
-            app:layout_constraintLeft_toRightOf="@id/answer1"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quiz_question" />
-
-        <Button
-            android:id="@+id/answer3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="Answer3"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/next_button"
+            app:layout_constraintBottom_toTopOf="@id/answer3"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/answer4"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/answer1" />
 
         <Button
-            android:id="@+id/answer4"
-            android:layout_width="wrap_content"
+            android:id="@+id/answer3"
+            android:layout_width="300sp"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="Answer4"
+            android:onClick="@{()->triviaViewModel.onClickAnswer3Button()}"
+            android:text="@{triviaViewModel.triviaQuestionLiveData.wrongAnswer2}"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/next_button"
-            app:layout_constraintLeft_toRightOf="@id/answer3"
+            app:layout_constraintBottom_toTopOf="@id/answer4"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/answer2" />
+
+        <Button
+            android:id="@+id/answer4"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:onClick="@{()->triviaViewModel.onClickAnswer4Button()}"
+            android:text="@{triviaViewModel.triviaQuestionLiveData.wrongAnswer3}"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@id/next_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer3" />
 
         <Button
             android:id="@+id/next_button"
