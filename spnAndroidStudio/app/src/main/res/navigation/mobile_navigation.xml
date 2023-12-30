@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_triviaFragment"
             app:destination="@id/navigation_trivia" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/navigation_profile" />
     </fragment>
 
     <fragment
@@ -37,6 +40,23 @@
         android:id="@+id/navigation_trivia"
         android:name="com.example.spntrivia.ui.trivia.TriviaFragment"
         android:label="@string/title_trivia"
-        tools:layout="@layout/fragment_trivia" />
+        tools:layout="@layout/fragment_trivia">
+        <action
+            android:id="@+id/action_triviaFragment_to_endQuizFragment"
+            app:destination="@id/navigation_end_quiz" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_end_quiz"
+        android:name="com.example.spntrivia.ui.endQuiz.EndQuizFragment"
+        android:label="@string/title_end_quiz"
+        tools:layout="@layout/fragment_end_quiz">
+        <action
+            android:id="@+id/action_endQuizFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_endQuizFragment_to_profileFragment"
+            app:destination="@id/navigation_profile" />
+    </fragment>
 
 </navigation>

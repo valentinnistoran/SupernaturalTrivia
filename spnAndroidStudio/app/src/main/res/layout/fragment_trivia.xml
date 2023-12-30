@@ -26,6 +26,7 @@
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickQuitButton()}"
             android:text="Quit"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toTopOf="@id/quiz_number"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/skip_button"
@@ -38,6 +39,7 @@
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickSkipButton()}"
             android:text="Skip"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toTopOf="@id/quiz_number"
             app:layout_constraintLeft_toRightOf="@+id/quit_button"
             app:layout_constraintRight_toRightOf="parent"
@@ -159,6 +161,7 @@
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickNextButton()}"
             android:text="Next"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/answer4" />

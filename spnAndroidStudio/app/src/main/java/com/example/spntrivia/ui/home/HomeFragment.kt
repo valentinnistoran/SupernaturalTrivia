@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.spntrivia.R
 import com.example.spntrivia.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class HomeFragment : Fragment() {
@@ -43,6 +45,17 @@ class HomeFragment : Fragment() {
 
         return binding.root
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                showQuitAppDialogue()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
     }
 
     override fun onResume() {
@@ -98,5 +111,18 @@ class HomeFragment : Fragment() {
         editor.putInt(getString(R.string.game_mode_key), gameMode)
         editor.apply()
         findNavController().navigate(R.id.action_homeFragment_to_triviaFragment)
+    }
+
+    private fun showQuitAppDialogue() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Leaving so Soon?")
+            .setMessage("Are you sure you want to exit the app?")
+            .setPositiveButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setNegativeButton("Yes") { _, _ ->
+                activity?.finish()
+            }
+            .show()
     }
 }

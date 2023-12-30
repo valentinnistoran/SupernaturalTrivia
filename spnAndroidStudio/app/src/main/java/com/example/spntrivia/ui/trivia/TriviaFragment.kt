@@ -29,14 +29,9 @@ class TriviaFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.triviaViewModel = triviaViewModel
 
-        triviaViewModel.questionsAnswered.observe(viewLifecycleOwner) { answeredCount ->
-            Log.d("TriviaFragment", "Answered question count: $answeredCount")
-
-            binding.quizNumber.text = Integer.toString(answeredCount)
-            binding.executePendingBindings()
-        }
 
         loadQuestions()
+        questionsAnsweredObserver()
         quitButtonObserver()
         skipButtonObserver()
         nextButtonObserver()
@@ -57,6 +52,15 @@ class TriviaFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+    }
+
+    private fun questionsAnsweredObserver() {
+        triviaViewModel.questionsAnswered.observe(viewLifecycleOwner) { answeredCount ->
+            Log.d("TriviaFragment", "Answered question count: $answeredCount")
+
+            binding.quizNumber.text = Integer.toString(answeredCount)
+            binding.executePendingBindings()
+        }
     }
 
     private fun loadQuestions() {
@@ -82,6 +86,12 @@ class TriviaFragment : Fragment() {
             .show()
     }
 
+    private fun navigateToEndQuiz(){
+        if(triviaViewModel.questionsAnswered.value==0) {
+            findNavController().navigate(R.id.action_triviaFragment_to_endQuizFragment)
+        }
+    }
+
 
     //button observers
     private fun quitButtonObserver() {
@@ -96,6 +106,7 @@ class TriviaFragment : Fragment() {
     private fun skipButtonObserver() {
         triviaViewModel.onSkipButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
+                navigateToEndQuiz()
                 triviaViewModel.loadNextQuestion()
                 triviaViewModel.onSkipButtonClicked.value = false
             }
@@ -106,6 +117,7 @@ class TriviaFragment : Fragment() {
     private fun nextButtonObserver() {
         triviaViewModel.onNextButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
+                navigateToEndQuiz()
                 triviaViewModel.loadNextQuestion()
                 triviaViewModel.onNextButtonClicked.value = false
             }
