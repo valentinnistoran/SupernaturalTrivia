@@ -24,10 +24,10 @@ class TriviaViewModel : ViewModel() {
     var questions: List<QuestionTrivia> = emptyList()
     var currentQuestionIndex: Int = 0
 
-    var answer1: String = ""
-    var answer2: String = ""
-    var answer3: String = ""
-    var answer4: String = ""
+    val answer1 = MutableLiveData<String>()
+    val answer2 = MutableLiveData<String>()
+    val answer3 = MutableLiveData<String>()
+    val answer4 = MutableLiveData<String>()
 
     val triviaQuestionLiveData = MutableLiveData<QuestionTrivia>()
 
@@ -104,18 +104,18 @@ class TriviaViewModel : ViewModel() {
         }
     }
 
-    private fun setAnswerButtons(question: QuestionTrivia) {
+    private fun setAnswerButtons(currentQuestion: QuestionTrivia) {
         val answers = listOf(
-            question.correctAnswer,
-            question.wrongAnswer1,
-            question.wrongAnswer2,
-            question.wrongAnswer3
+            currentQuestion.correctAnswer,
+            currentQuestion.wrongAnswer1,
+            currentQuestion.wrongAnswer2,
+            currentQuestion.wrongAnswer3
         ).shuffled()
 
-        answer1 = answers[0]
-        answer2 = answers[1]
-        answer3 = answers[2]
-        answer4 = answers[3]
+        answer1.value = answers[0]
+        answer2.value = answers[1]
+        answer3.value = answers[2]
+        answer4.value = answers[3]
     }
 
     fun loadNextQuestion() {
@@ -130,8 +130,10 @@ class TriviaViewModel : ViewModel() {
     private fun loadQuestionAtIndex(index: Int) {
         if (index in questions.indices) {
             val question = questions[index]
+            var correctAnswer = question.correctAnswer
             setAnswerButtons(question)
             triviaQuestionLiveData.value = question
+
         }
     }
 
