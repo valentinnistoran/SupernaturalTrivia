@@ -56,13 +56,14 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/quit_button" />
 
+        <!-- Temporary use of the timer to display the score for debugging -->
         <TextView
             android:id="@+id/quiz_timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="28dp"
             android:fontFamily="serif"
-            android:text="Time"
+            android:text="@{String.valueOf(triviaViewModel.score)}"
             app:layout_constraintBottom_toTopOf="@id/quiz_image"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/quiz_number" />
@@ -105,6 +106,7 @@
             android:id="@+id/answer1"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer1Button()}"
             android:text="@{triviaViewModel.answer1}"
@@ -118,6 +120,7 @@
             android:id="@+id/answer2"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer2Button()}"
             android:text="@{triviaViewModel.answer2}"
@@ -131,6 +134,7 @@
             android:id="@+id/answer3"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer3Button()}"
             android:text="@{triviaViewModel.answer3}"
@@ -144,6 +148,7 @@
             android:id="@+id/answer4"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer4Button()}"
             android:text="@{triviaViewModel.answer4}"

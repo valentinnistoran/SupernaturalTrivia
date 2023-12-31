@@ -18,9 +18,6 @@ class TriviaViewModel : ViewModel() {
     val onAnswer4ButtonClicked = MutableLiveData(false)
     val onNextButtonClicked = MutableLiveData(false)
 
-
-    val questionsAnswered = MutableLiveData(1)
-
     var questions: List<QuestionTrivia> = emptyList()
     var currentQuestionIndex: Int = 0
 
@@ -29,7 +26,16 @@ class TriviaViewModel : ViewModel() {
     val answer3 = MutableLiveData<String>()
     val answer4 = MutableLiveData<String>()
 
+    var isAnswer1Clicked = false
+    var isAnswer2Clicked = false
+    var isAnswer3Clicked = false
+    var isAnswer4Clicked = false
+
     val triviaQuestionLiveData = MutableLiveData<QuestionTrivia>()
+
+    val questionsAnswered = MutableLiveData(1)
+    val score = MutableLiveData(0)
+    private var correctAnswer: String = ""
 
 
     //onClick functions
@@ -63,6 +69,7 @@ class TriviaViewModel : ViewModel() {
         onNextButtonClicked.value = true
         answeredQuestions()
         loadNextQuestion()
+        resetAnswerButtonStates()
     }
 
     //questions loading functions
@@ -105,6 +112,7 @@ class TriviaViewModel : ViewModel() {
     }
 
     private fun setAnswerButtons(currentQuestion: QuestionTrivia) {
+        correctAnswer = currentQuestion.correctAnswer
         val answers = listOf(
             currentQuestion.correctAnswer,
             currentQuestion.wrongAnswer1,
@@ -133,7 +141,6 @@ class TriviaViewModel : ViewModel() {
             var correctAnswer = question.correctAnswer
             setAnswerButtons(question)
             triviaQuestionLiveData.value = question
-
         }
     }
 
@@ -147,13 +154,32 @@ class TriviaViewModel : ViewModel() {
     }
 
     //check if the button pressed is the right answer
-    fun isRightAnswer() {
+    fun isRightAnswer(selectedAnswer: String) {
+        if (!isAnswer1Clicked && !isAnswer2Clicked && !isAnswer3Clicked && !isAnswer4Clicked) {
+            if (selectedAnswer == correctAnswer) {
+                score.value = (score.value ?: 0) + 1
+            }
 
+            // Update button states
+            when (selectedAnswer) {
+                answer1.value -> isAnswer1Clicked = true
+                answer2.value -> isAnswer2Clicked = true
+                answer3.value -> isAnswer3Clicked = true
+                answer4.value -> isAnswer4Clicked = true
+            }
+        }
     }
 
     //confirm quitting the quiz
     fun confirmQuit() {
         questionsAnswered.value = 0
+    }
+
+    private fun resetAnswerButtonStates() {
+        isAnswer1Clicked = false
+        isAnswer2Clicked = false
+        isAnswer3Clicked = false
+        isAnswer4Clicked = false
     }
 
 
