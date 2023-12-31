@@ -36,6 +36,7 @@
             android:id="@+id/skip_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickSkipButton()}"
             android:text="Skip"
@@ -153,7 +154,7 @@
             android:onClick="@{()->triviaViewModel.onClickAnswer4Button()}"
             android:text="@{triviaViewModel.answer4}"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/next_button"
+            app:layout_constraintBottom_toTopOf="@id/anchor"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/answer3" />
@@ -163,13 +164,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="28dp"
+            android:backgroundTint="@color/green"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickNextButton()}"
             android:text="Next"
             android:textAllCaps="false"
+            android:visibility="@{triviaViewModel.isAnswerButtonClicked()? View.VISIBLE:View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/answer4" />
+
+        <ImageView
+            android:id="@+id/anchor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/answer3" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

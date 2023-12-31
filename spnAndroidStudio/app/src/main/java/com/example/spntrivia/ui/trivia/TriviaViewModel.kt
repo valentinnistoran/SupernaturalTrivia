@@ -31,11 +31,14 @@ class TriviaViewModel : ViewModel() {
     var isAnswer3Clicked = false
     var isAnswer4Clicked = false
 
+    val isAnswerButtonClicked = MutableLiveData<Boolean>(false)
+
     val triviaQuestionLiveData = MutableLiveData<QuestionTrivia>()
 
     val questionsAnswered = MutableLiveData(1)
     val score = MutableLiveData(0)
     private var correctAnswer: String = ""
+
 
 
     //onClick functions
@@ -51,18 +54,22 @@ class TriviaViewModel : ViewModel() {
 
     fun onClickAnswer1Button() {
         onAnswer1ButtonClicked.value = true
+        isAnswerButtonClicked.value = true
     }
 
     fun onClickAnswer2Button() {
         onAnswer2ButtonClicked.value = true
+        isAnswerButtonClicked.value = true
     }
 
     fun onClickAnswer3Button() {
         onAnswer3ButtonClicked.value = true
+        isAnswerButtonClicked.value = true
     }
 
     fun onClickAnswer4Button() {
         onAnswer4ButtonClicked.value = true
+        isAnswerButtonClicked.value = true
     }
 
     fun onClickNextButton() {
@@ -136,6 +143,7 @@ class TriviaViewModel : ViewModel() {
     }
 
     private fun loadQuestionAtIndex(index: Int) {
+        isAnswerButtonClicked.value = false
         if (index in questions.indices) {
             val question = questions[index]
             var correctAnswer = question.correctAnswer
@@ -181,6 +189,5 @@ class TriviaViewModel : ViewModel() {
         isAnswer3Clicked = false
         isAnswer4Clicked = false
     }
-
 
 }
