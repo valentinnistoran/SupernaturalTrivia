@@ -46,7 +46,6 @@ class TriviaViewModel : ViewModel() {
     private var correctAnswer: String = ""
 
 
-
     //onClick functions
     fun onClickQuitButton() {
         onQuitButtonClicked.value = true
@@ -147,8 +146,6 @@ class TriviaViewModel : ViewModel() {
         currentQuestionIndex++
         if (currentQuestionIndex <= questions.size) {
             loadQuestionAtIndex(currentQuestionIndex)
-        } else {
-            //go to end page
         }
     }
 
@@ -169,7 +166,7 @@ class TriviaViewModel : ViewModel() {
     //keep track of answered questions
     private fun answeredQuestions() {
         questionsAnswered.value = questionsAnswered.value?.plus(1)
-        if (questionsAnswered.value == 11) {
+        if (questionsAnswered.value == 10) {
             questionsAnswered.value = 0
             //go to end page
         }
@@ -183,8 +180,6 @@ class TriviaViewModel : ViewModel() {
                 score.value = (score.value ?: 0) + 1
                 answerColor.value = true
             }
-
-            // Update button states
             when (selectedAnswer) {
                 answer1.value -> isAnswer1Clicked = true
                 answer2.value -> isAnswer2Clicked = true
@@ -205,5 +200,5 @@ class TriviaViewModel : ViewModel() {
         isAnswer3Clicked = false
         isAnswer4Clicked = false
     }
-    
+
 }

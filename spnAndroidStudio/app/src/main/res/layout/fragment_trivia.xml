@@ -23,26 +23,26 @@
             android:id="@+id/quit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickQuitButton()}"
             android:text="Quit"
             android:textAllCaps="false"
             app:layout_constraintBottom_toTopOf="@id/quiz_number"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/skip_button"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/skip_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickSkipButton()}"
             android:text="Skip"
             android:textAllCaps="false"
             app:layout_constraintBottom_toTopOf="@id/quiz_number"
-            app:layout_constraintLeft_toRightOf="@+id/quit_button"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,22 +51,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text='@{String.valueOf(triviaViewModel.questionsAnswered) + "/10"}'
+            android:text="@{String.valueOf(triviaViewModel.questionsAnswered)}"
             app:layout_constraintBottom_toTopOf="@id/quiz_timer"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/quit_button" />
 
-        <!-- Temporary use of the timer to display the score for debugging -->
+        <TextView
+            android:id="@+id/quiz_number_slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="/10"
+            app:layout_constraintBottom_toTopOf="@id/quiz_timer"
+            app:layout_constraintStart_toEndOf="@id/quiz_number"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/quit_button" />
+
+        <TextView
+            android:id="@+id/quiz_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text='@{"Score: " + String.valueOf(triviaViewModel.score)}'
+            app:layout_constraintBottom_toTopOf="@id/quiz_image"
+            app:layout_constraintStart_toStartOf="@+id/quiz_image"
+            app:layout_constraintRight_toLeftOf="@id/quiz_timer"
+            app:layout_constraintTop_toBottomOf="@id/quiz_number" />
+
         <TextView
             android:id="@+id/quiz_timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="28dp"
             android:fontFamily="serif"
-            android:text="@{String.valueOf(triviaViewModel.score)}"
+            android:text="Time:"
             app:layout_constraintBottom_toTopOf="@id/quiz_image"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/quiz_score"
+            app:layout_constraintEnd_toEndOf="@id/quiz_image"
             app:layout_constraintTop_toBottomOf="@id/quiz_number" />
 
         <ImageView
@@ -200,7 +221,7 @@
             app:layout_constraintBottom_toTopOf="@id/answer3"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer1"  />
+            app:layout_constraintTop_toBottomOf="@+id/answer1" />
 
         <TextView
             android:id="@+id/answer3_color"
@@ -214,7 +235,7 @@
             app:layout_constraintBottom_toTopOf="@id/answer4"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer2"  />
+            app:layout_constraintTop_toBottomOf="@+id/answer2" />
 
         <TextView
             android:id="@+id/answer4_color"
