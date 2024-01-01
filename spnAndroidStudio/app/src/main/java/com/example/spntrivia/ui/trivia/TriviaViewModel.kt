@@ -5,12 +5,19 @@ import android.content.Context
 import android.os.CountDownTimer
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.spntrivia.gameHistoryDB.QuizResult
+import com.example.spntrivia.repository.QuizResultRepository
 import com.example.spntrivia.triviaDB.QuestionTrivia
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.launch
 import java.io.IOException
 
-class TriviaViewModel : ViewModel() {
+class TriviaViewModel() : ViewModel() {
+
+    private var levelDifficulty = 0
+
     val onQuitButtonClicked = MutableLiveData(false)
     val onSkipButtonClicked = MutableLiveData(false)
     val onAnswer1ButtonClicked = MutableLiveData(false)
@@ -47,7 +54,7 @@ class TriviaViewModel : ViewModel() {
     val finalScore = MutableLiveData<Long>(0)
     private var correctAnswer: String = ""
 
-    val timerDuration : Long = 60000
+    val timerDuration: Long = 60000
     val remainingTime = MutableLiveData<Long>()
     val triviaTimerLiveData = MutableLiveData<Long>()
     val timerFinished = MutableLiveData(false)
@@ -62,6 +69,9 @@ class TriviaViewModel : ViewModel() {
             timerFinished.value = true
         }
     }
+
+
+    //TODO:private lateinit var quizResultRepository: QuizResultRepository
 
     //onClick functions
     fun onClickQuitButton() {
@@ -109,6 +119,7 @@ class TriviaViewModel : ViewModel() {
     fun loadQuestions(context: Context, difficultyLevel: Int) {
         questionsAnswered.value = 1
         currentQuestionIndex = 0
+        levelDifficulty = difficultyLevel
         val fileName = when (difficultyLevel) {
             1 -> "easy_questions.json"
             2 -> "medium_questions.json"
@@ -185,6 +196,7 @@ class TriviaViewModel : ViewModel() {
         questionsAnswered.value = questionsAnswered.value?.plus(1)
         if (questionsAnswered.value == 10) {
             questionsAnswered.value = 0
+            //TODO: score.value?.let { insertQuizResult(levelDifficulty, it,10) }
             //go to end page
         }
     }
@@ -219,8 +231,15 @@ class TriviaViewModel : ViewModel() {
     }
 
     //TODO: find a formula for calculating the score + make it float
-    fun calculateScore(){
+    fun calculateScore() {
         finalScore.value = (remainingTime.value?.let { score.value?.times(it) })
         finalScore.value = finalScore.value?.div(100)
+    }
+
+    fun insertQuizResult(difficulty: Int, score: Int, rank: Int) {
+        viewModelScope.launch {
+            val quizResult = QuizResult(difficulty = difficulty, score = score, rank = rank)
+            //TODO:quizResultRepository.insert(quizResult)
+        }
     }
 }
