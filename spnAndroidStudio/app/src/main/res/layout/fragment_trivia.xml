@@ -106,7 +106,7 @@
         <Button
             android:id="@+id/answer1"
             android:layout_width="300sp"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer1Button()}"
@@ -120,7 +120,7 @@
         <Button
             android:id="@+id/answer2"
             android:layout_width="300sp"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer2Button()}"
@@ -134,7 +134,7 @@
         <Button
             android:id="@+id/answer3"
             android:layout_width="300sp"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer3Button()}"
@@ -148,7 +148,7 @@
         <Button
             android:id="@+id/answer4"
             android:layout_width="300sp"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer4Button()}"
@@ -174,10 +174,67 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/answer4" />
 
+        <TextView
+            android:id="@+id/answer1_color"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="@{triviaViewModel.answerColor ? @color/green : @color/bloody_red}"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@{triviaViewModel.answer1}"
+            android:visibility="@{triviaViewModel.isAnswer1ButtonClicked()? View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/answer2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quiz_question" />
+
+        <TextView
+            android:id="@+id/answer2_color"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="@{triviaViewModel.answerColor ? @color/green : @color/bloody_red}"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@{triviaViewModel.answer2}"
+            android:visibility="@{triviaViewModel.isAnswer2ButtonClicked()? View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/answer3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer1"  />
+
+        <TextView
+            android:id="@+id/answer3_color"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="@{triviaViewModel.answerColor ? @color/green : @color/bloody_red}"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@{triviaViewModel.answer3}"
+            android:visibility="@{triviaViewModel.isAnswer3ButtonClicked()? View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/answer4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer2"  />
+
+        <TextView
+            android:id="@+id/answer4_color"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="@{triviaViewModel.answerColor ? @color/green : @color/bloody_red}"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@{triviaViewModel.answer4}"
+            android:visibility="@{triviaViewModel.isAnswer4ButtonClicked()? View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/anchor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer3" />
+
         <ImageView
             android:id="@+id/anchor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

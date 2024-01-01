@@ -33,6 +33,12 @@ class TriviaViewModel : ViewModel() {
 
     val isAnswerButtonClicked = MutableLiveData<Boolean>(false)
 
+    val isAnswer1ButtonClicked = MutableLiveData<Boolean>(false)
+    val isAnswer2ButtonClicked = MutableLiveData<Boolean>(false)
+    val isAnswer3ButtonClicked = MutableLiveData<Boolean>(false)
+    val isAnswer4ButtonClicked = MutableLiveData<Boolean>(false)
+    var answerColor = MutableLiveData<Boolean>(false)
+
     val triviaQuestionLiveData = MutableLiveData<QuestionTrivia>()
 
     val questionsAnswered = MutableLiveData(1)
@@ -55,21 +61,25 @@ class TriviaViewModel : ViewModel() {
     fun onClickAnswer1Button() {
         onAnswer1ButtonClicked.value = true
         isAnswerButtonClicked.value = true
+        isAnswer1ButtonClicked.value = true
     }
 
     fun onClickAnswer2Button() {
         onAnswer2ButtonClicked.value = true
         isAnswerButtonClicked.value = true
+        isAnswer2ButtonClicked.value = true
     }
 
     fun onClickAnswer3Button() {
         onAnswer3ButtonClicked.value = true
         isAnswerButtonClicked.value = true
+        isAnswer3ButtonClicked.value = true
     }
 
     fun onClickAnswer4Button() {
         onAnswer4ButtonClicked.value = true
         isAnswerButtonClicked.value = true
+        isAnswer4ButtonClicked.value = true
     }
 
     fun onClickNextButton() {
@@ -144,6 +154,10 @@ class TriviaViewModel : ViewModel() {
 
     private fun loadQuestionAtIndex(index: Int) {
         isAnswerButtonClicked.value = false
+        isAnswer1ButtonClicked.value = false
+        isAnswer2ButtonClicked.value = false
+        isAnswer3ButtonClicked.value = false
+        isAnswer4ButtonClicked.value = false
         if (index in questions.indices) {
             val question = questions[index]
             var correctAnswer = question.correctAnswer
@@ -163,9 +177,11 @@ class TriviaViewModel : ViewModel() {
 
     //check if the button pressed is the right answer
     fun isRightAnswer(selectedAnswer: String) {
+        answerColor.value = false
         if (!isAnswer1Clicked && !isAnswer2Clicked && !isAnswer3Clicked && !isAnswer4Clicked) {
             if (selectedAnswer == correctAnswer) {
                 score.value = (score.value ?: 0) + 1
+                answerColor.value = true
             }
 
             // Update button states
@@ -189,5 +205,5 @@ class TriviaViewModel : ViewModel() {
         isAnswer3Clicked = false
         isAnswer4Clicked = false
     }
-
+    
 }
