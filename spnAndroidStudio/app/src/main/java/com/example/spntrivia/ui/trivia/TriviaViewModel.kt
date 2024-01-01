@@ -44,11 +44,24 @@ class TriviaViewModel : ViewModel() {
 
     val questionsAnswered = MutableLiveData(1)
     val score = MutableLiveData(0)
+    val finalScore = MutableLiveData<Long>(0)
     private var correctAnswer: String = ""
 
+    val timerDuration : Long = 60000
+    val remainingTime = MutableLiveData<Long>()
     val triviaTimerLiveData = MutableLiveData<Long>()
     val timerFinished = MutableLiveData(false)
 
+    val timer: CountDownTimer = object : CountDownTimer(timerDuration, 1000) {
+        override fun onTick(millisUntilFinished: Long) {
+            triviaTimerLiveData.value = millisUntilFinished / 1000
+        }
+
+        override fun onFinish() {
+            remainingTime.value = triviaTimerLiveData.value!!
+            timerFinished.value = true
+        }
+    }
 
     //onClick functions
     fun onClickQuitButton() {
@@ -193,11 +206,6 @@ class TriviaViewModel : ViewModel() {
         }
     }
 
-    //confirm quitting the quiz
-    fun confirmQuit() {
-        questionsAnswered.value = 0
-    }
-
     private fun resetAnswerButtonStates() {
         isAnswer1Clicked = false
         isAnswer2Clicked = false
@@ -205,14 +213,14 @@ class TriviaViewModel : ViewModel() {
         isAnswer4Clicked = false
     }
 
-    val timer: CountDownTimer = object : CountDownTimer(45000, 1000) {
-        override fun onTick(millisUntilFinished: Long) {
-            triviaTimerLiveData.value = millisUntilFinished / 1000
-        }
-
-        override fun onFinish() {
-            timerFinished.value = true
-        }
+    //confirm quitting the quiz
+    fun confirmQuit() {
+        questionsAnswered.value = 0
     }
 
+    //TODO: find a formula for calculating the score + make it float
+    fun calculateScore(){
+        finalScore.value = (remainingTime.value?.let { score.value?.times(it) })
+        finalScore.value = finalScore.value?.div(100)
+    }
 }
