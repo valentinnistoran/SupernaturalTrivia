@@ -2,6 +2,7 @@ package com.example.spntrivia.ui.trivia
 
 
 import android.content.Context
+import android.os.CountDownTimer
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.spntrivia.triviaDB.QuestionTrivia
@@ -44,6 +45,9 @@ class TriviaViewModel : ViewModel() {
     val questionsAnswered = MutableLiveData(1)
     val score = MutableLiveData(0)
     private var correctAnswer: String = ""
+
+    val triviaTimerLiveData = MutableLiveData<Long>()
+    val timerFinished = MutableLiveData(false)
 
 
     //onClick functions
@@ -199,6 +203,16 @@ class TriviaViewModel : ViewModel() {
         isAnswer2Clicked = false
         isAnswer3Clicked = false
         isAnswer4Clicked = false
+    }
+
+    val timer: CountDownTimer = object : CountDownTimer(45000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {
+            triviaTimerLiveData.value = millisUntilFinished / 1000
+        }
+
+        override fun onFinish() {
+            timerFinished.value = true
+        }
     }
 
 }

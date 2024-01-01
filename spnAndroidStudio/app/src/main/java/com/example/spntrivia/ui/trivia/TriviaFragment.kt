@@ -39,6 +39,8 @@ class TriviaFragment : Fragment() {
         answer2ButtonObserver()
         answer3ButtonObserver()
         answer4ButtonObserver()
+        timerObserver()
+        timerFinishedObserver()
 
         return binding.root
     }
@@ -69,7 +71,7 @@ class TriviaFragment : Fragment() {
         )
         val difficultyLevel = sharedPreferences.getInt(getString(R.string.game_mode_key), 1)
         triviaViewModel.loadQuestions(requireContext(), difficultyLevel)
-
+        triviaViewModel.timer.start()
     }
 
     private fun showQuitDialog() {
@@ -81,6 +83,7 @@ class TriviaFragment : Fragment() {
             }
             .setNegativeButton("Yes") { _, _ ->
                 triviaViewModel.confirmQuit()
+                triviaViewModel.timer.cancel()
                 findNavController().popBackStack(R.id.navigation_home, false)
             }
             .show()
@@ -157,6 +160,25 @@ class TriviaFragment : Fragment() {
             if (isClicked) {
                 triviaViewModel.isRightAnswer(triviaViewModel.answer4.value.toString())
                 triviaViewModel.onAnswer4ButtonClicked.value = false
+            }
+        }
+    }
+
+    private fun timerObserver() {
+        triviaViewModel.triviaTimerLiveData.observe(viewLifecycleOwner) { remainingTime ->
+            binding.quizTimer.text = "Time: $remainingTime s"
+            if(triviaViewModel.timerFinished.value==true){
+                findNavController().navigate(R.id.action_triviaFragment_to_endQuizFragment)
+                triviaViewModel.timerFinished.value=false
+            }
+        }
+    }
+
+    private fun timerFinishedObserver(){
+        triviaViewModel.timerFinished.observe(viewLifecycleOwner) {
+            if (triviaViewModel.timerFinished.value==true) {
+                findNavController().navigate(R.id.action_triviaFragment_to_endQuizFragment)
+                triviaViewModel.timerFinished.value=false
             }
         }
     }

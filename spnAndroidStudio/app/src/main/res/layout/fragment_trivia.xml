@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="Time:"
+            android:text='@{"Time:" + triviaViewModel.triviaTimerLiveData}'
             app:layout_constraintBottom_toTopOf="@id/quiz_image"
             app:layout_constraintLeft_toRightOf="@id/quiz_score"
             app:layout_constraintEnd_toEndOf="@id/quiz_image"
