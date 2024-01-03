@@ -7,15 +7,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.spntrivia.R
 import com.example.spntrivia.databinding.FragmentInfoBinding
+import java.util.*
 
 class InfoFragment : Fragment() {
 
     private lateinit var binding: FragmentInfoBinding
     private val infoViewModel: InfoViewModel by viewModels()
+
+    private var currentFunFactId: Int? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,8 +37,42 @@ class InfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        infoViewModel.loadFunFacts(requireContext())
+        displayFunFact(0)
+
+        refreshFunFactButtonObserver()
         instagramButtonObserver()
         twitterButtonObserver()
+    }
+
+    private fun refreshFunFactButtonObserver() {
+        infoViewModel.onRefreshFunFactButton.observe(viewLifecycleOwner) { isClicked ->
+            if (isClicked) {
+                var newId: Int
+                do {
+                    newId = Random().nextInt(38)
+                } while (newId == currentFunFactId)
+
+                currentFunFactId = newId
+
+                displayFunFact(newId)
+
+                infoViewModel.onRefreshFunFactButton.value = false
+            }
+        }
+    }
+
+    private fun displayFunFact(id: Int) {
+        val funFactTextView: TextView = binding.root.findViewById(R.id.funFactTextView)
+
+        infoViewModel.funFactsList?.let { funFactsList ->
+            val funFact = funFactsList.find { it.id == id }
+
+            funFact?.let {
+                val funFactText = "${it.title}\n\n${it.text}"
+                funFactTextView.text = funFactText
+            }
+        }
     }
 
     private fun instagramButtonObserver() {

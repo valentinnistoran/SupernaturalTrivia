@@ -34,7 +34,7 @@
             android:id="@+id/officialPagesTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="232dp"
+            android:layout_marginBottom="196dp"
             android:fontFamily="serif"
             android:text="Show's Official Pages"
             android:textAlignment="center"
@@ -43,17 +43,41 @@
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="0dp" />
 
+        <ImageView
+            android:id="@+id/smokeBackground"
+            android:layout_width="598dp"
+            android:layout_height="447dp"
+            android:layout_marginTop="160dp"
+            app:layout_constraintBottom_toTopOf="@+id/officialPagesTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/black_smoke" />
+
+        <ImageButton
+            android:id="@+id/refreshFunFactButton"
+            android:layout_width="45dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="72dp"
+            android:backgroundTint="@android:color/transparent"
+            android:onClick="@{()->infoViewModel.onClickRefreshFunFactButton()}"
+            app:layout_constraintStart_toEndOf="@+id/funFactTitle"
+            app:layout_constraintTop_toBottomOf="@+id/text_info"
+            app:srcCompat="@drawable/ic_baseline_refresh_24" />
+
         <TextView
             android:id="@+id/funFactTitle"
-            android:layout_width="205dp"
+            android:layout_width="123dp"
             android:layout_height="37dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="72dp"
             android:layout_marginTop="72dp"
             android:fontFamily="serif"
-            android:text="Today's Fun Fact"
+            android:text="Fun Fact"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="23sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_info" />
 
@@ -74,12 +98,12 @@
             android:id="@+id/instagramButton"
             android:layout_width="264dp"
             android:layout_height="48dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:onClick="@{()->infoViewModel.onClickInstagramButton()}"
             android:padding="0dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/officialPagesTitle"
             app:srcCompat="@drawable/instagram_gradient" />
@@ -111,7 +135,7 @@
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/instagramButton"
-            app:layout_constraintVertical_bias="0.218"
+            app:layout_constraintVertical_bias="0.289"
             app:srcCompat="@drawable/twitter_gradient" />
 
         <TextView
@@ -130,24 +154,25 @@
             app:layout_constraintTop_toTopOf="@+id/twitterButton" />
 
         <TextView
-            android:id="@+id/funFact"
+            android:id="@+id/funFactTextView"
             android:layout_width="299dp"
             android:layout_height="230dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="55dp"
-            android:background="@color/light_grey"
+            android:layout_marginStart="149dp"
+            android:layout_marginEnd="150dp"
+            android:backgroundTint="@android:color/transparent"
             android:fontFamily="serif"
             android:gravity="center"
-            android:maxLines="6"
+            android:maxLines="10"
             android:text="Fun fact of the day"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/officialPagesTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/funFactTitle"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/smokeBackground"
+            app:layout_constraintEnd_toEndOf="@+id/smokeBackground"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/smokeBackground"
+            app:layout_constraintTop_toTopOf="@+id/smokeBackground"
+            app:layout_constraintVertical_bias="0.465" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
