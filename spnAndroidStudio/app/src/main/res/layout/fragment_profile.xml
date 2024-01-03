@@ -45,11 +45,12 @@
 
         <ImageView
             android:id="@+id/profileImage"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/gameHistoryLabel"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/usernameField"
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
             app:srcCompat="@drawable/castiel_profile" />
 
@@ -64,9 +65,9 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/gameHistoryLabel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+            app:layout_constraintLeft_toRightOf="@id/profileImage"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <TextView
             android:id="@+id/gameHistoryLabel"
@@ -78,24 +79,97 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/difficulty"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_info" />
 
-        <HorizontalScrollView
-            android:layout_width="328dp"
-            android:layout_height="250dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gameHistoryLabel"
-            app:layout_constraintVertical_bias="0.6">
+        <TextView
+            android:id="@+id/difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:text="Difficulty"
+            app:layout_constraintBottom_toTopOf="@id/recyclerView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/score"
+            app:layout_constraintTop_toBottomOf="@id/gameHistoryLabel" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical" />
-        </HorizontalScrollView>
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:text="Score"
+            app:layout_constraintBottom_toTopOf="@id/recyclerView"
+            app:layout_constraintLeft_toRightOf="@id/difficulty"
+            app:layout_constraintRight_toLeftOf="@id/rank"
+            app:layout_constraintTop_toBottomOf="@id/gameHistoryLabel" />
+
+        <TextView
+            android:id="@+id/rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:text="Rank"
+            app:layout_constraintBottom_toTopOf="@id/recyclerView"
+            app:layout_constraintLeft_toRightOf="@id/score"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gameHistoryLabel" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/difficulty" />
+
+        <View
+            android:id="@+id/line_horizontal1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/difficulty"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gameHistoryLabel" />
+
+        <View
+            android:id="@+id/line_horizontal2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/recyclerView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/difficulty" />
+
+        <View
+            android:id="@+id/line_vertical1"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line_vertical2"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+        <View
+            android:id="@+id/line_vertical2"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/line_vertical1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
