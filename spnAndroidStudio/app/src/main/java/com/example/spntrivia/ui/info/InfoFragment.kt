@@ -1,7 +1,9 @@
 package com.example.spntrivia.ui.info
 
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,6 +21,7 @@ class InfoFragment : Fragment() {
     private lateinit var binding: FragmentInfoBinding
     private val infoViewModel: InfoViewModel by viewModels()
 
+    private lateinit var sharedPreferences: SharedPreferences
     private var currentFunFactId: Int? = null
 
     override fun onCreateView(
@@ -31,6 +34,10 @@ class InfoFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.infoViewModel = infoViewModel
 
+        sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
+        currentFunFactId = sharedPreferences.getInt("currentFunFactId", 0)
+
+
         return binding.root
     }
 
@@ -38,7 +45,7 @@ class InfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         infoViewModel.loadFunFacts(requireContext())
-        displayFunFact(0)
+        displayFunFact(currentFunFactId ?: 0)
 
         refreshFunFactButtonObserver()
         instagramButtonObserver()
@@ -56,6 +63,7 @@ class InfoFragment : Fragment() {
                 currentFunFactId = newId
 
                 displayFunFact(newId)
+                sharedPreferences.edit().putInt("currentFunFactId", currentFunFactId ?: 0).apply()
 
                 infoViewModel.onRefreshFunFactButton.value = false
             }
