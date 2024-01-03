@@ -7,17 +7,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.spntrivia.R
 import com.example.spntrivia.databinding.FragmentTriviaBinding
+import com.example.spntrivia.gameHistoryDB.QuizResult
+import com.example.spntrivia.gameHistoryDB.QuizResultsViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class TriviaFragment : Fragment() {
 
     private lateinit var binding: FragmentTriviaBinding
     private val triviaViewModel: TriviaViewModel by viewModels()
+    private lateinit var quizResultsViewModel: QuizResultsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +34,7 @@ class TriviaFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.triviaViewModel = triviaViewModel
 
+        quizResultsViewModel = ViewModelProvider(this).get(QuizResultsViewModel::class.java)
 
         loadQuestions()
         questionsAnsweredObserver()
@@ -91,6 +97,7 @@ class TriviaFragment : Fragment() {
 
     private fun navigateToEndQuiz(){
         if(triviaViewModel.questionsAnswered.value==0) {
+            insertDataToDatabase()
             findNavController().navigate(R.id.action_triviaFragment_to_endQuizFragment)
         }
     }
@@ -181,5 +188,17 @@ class TriviaFragment : Fragment() {
                 triviaViewModel.timerFinished.value=false
             }
         }
+    }
+
+    private fun insertDataToDatabase(){
+        val chosenDifficulty = triviaViewModel.levelDifficulty.value
+        val calculatedScore = triviaViewModel.score.value //TODO: modify with the calculated score
+        val calculatedRank = 10
+
+        val quizResult = QuizResult(0,chosenDifficulty,calculatedScore,calculatedRank)
+
+        quizResultsViewModel.addQuizResult(quizResult)
+        Toast.makeText(requireContext(), "Added Successfully", Toast.LENGTH_LONG).show()
+
     }
 }

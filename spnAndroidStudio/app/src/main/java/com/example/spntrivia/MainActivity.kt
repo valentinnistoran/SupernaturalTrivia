@@ -9,8 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.spntrivia.databinding.ActivityMainBinding
 import com.example.spntrivia.gameHistoryDB.GameDatabase
-import com.example.spntrivia.repository.QuizResultRepository
-import com.example.spntrivia.triviaDB.TriviaDatabase
+import com.example.spntrivia.gameHistoryDB.QuizResultRepository
 import com.example.spntrivia.ui.trivia.TriviaViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -32,10 +31,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         //triviaDatabase = TriviaDatabase.getDatabase(this)
-        gameDatabase = GameDatabase.getDatabase(this)
-
-        //quizResultRepository = QuizResultRepository(GameDatabase.getDatabase(this).quizResultDao())
-        //triviaViewModel = TriviaViewModel(quizResultRepository)
+//        gameDatabase = GameDatabase.getDatabase(this)
+//        quizResultRepository = QuizResultRepository(gameDatabase.quizResultDao())
+//        triviaViewModel = TriviaViewModel(quizResultRepository)
 
 
         val navView: BottomNavigationView = binding.navView

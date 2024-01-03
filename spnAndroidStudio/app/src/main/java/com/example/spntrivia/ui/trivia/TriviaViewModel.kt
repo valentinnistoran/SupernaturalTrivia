@@ -5,18 +5,15 @@ import android.content.Context
 import android.os.CountDownTimer
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.spntrivia.gameHistoryDB.QuizResult
-import com.example.spntrivia.repository.QuizResultRepository
 import com.example.spntrivia.triviaDB.QuestionTrivia
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import kotlinx.coroutines.launch
 import java.io.IOException
 
 class TriviaViewModel() : ViewModel() {
 
-    private var levelDifficulty = 0
+//    var levelDifficulty = 0
+    val levelDifficulty = MutableLiveData(0)
 
     val onQuitButtonClicked = MutableLiveData(false)
     val onSkipButtonClicked = MutableLiveData(false)
@@ -71,7 +68,7 @@ class TriviaViewModel() : ViewModel() {
     }
 
 
-    //TODO:private lateinit var quizResultRepository: QuizResultRepository
+    //private lateinit var quizResultRepository: QuizResultRepository
 
     //onClick functions
     fun onClickQuitButton() {
@@ -119,7 +116,7 @@ class TriviaViewModel() : ViewModel() {
     fun loadQuestions(context: Context, difficultyLevel: Int) {
         questionsAnswered.value = 1
         currentQuestionIndex = 0
-        levelDifficulty = difficultyLevel
+        levelDifficulty.value = difficultyLevel
         val fileName = when (difficultyLevel) {
             1 -> "easy_questions.json"
             2 -> "medium_questions.json"
@@ -196,7 +193,7 @@ class TriviaViewModel() : ViewModel() {
         questionsAnswered.value = questionsAnswered.value?.plus(1)
         if (questionsAnswered.value == 10) {
             questionsAnswered.value = 0
-            //TODO: score.value?.let { insertQuizResult(levelDifficulty, it,10) }
+//            score.value?.let { insertQuizResult(levelDifficulty, it,10) }
             //go to end page
         }
     }
@@ -236,10 +233,10 @@ class TriviaViewModel() : ViewModel() {
         finalScore.value = finalScore.value?.div(100)
     }
 
-    fun insertQuizResult(difficulty: Int, score: Int, rank: Int) {
-        viewModelScope.launch {
-            val quizResult = QuizResult(difficulty = difficulty, score = score, rank = rank)
-            //TODO:quizResultRepository.insert(quizResult)
-        }
-    }
+//    fun insertQuizResult(difficulty: Int, score: Int, rank: Int) {
+//        viewModelScope.launch {
+//            val quizResult = QuizResult(difficulty = difficulty, score = score, rank = rank)
+//            quizResultRepository.insertResults(quizResult)
+//        }
+//    }
 }

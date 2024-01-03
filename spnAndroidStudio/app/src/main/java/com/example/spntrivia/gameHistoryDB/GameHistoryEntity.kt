@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class QuizResult(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
-    val difficulty: Int,
-    val score: Int,
+    val difficulty: Int?,
+    val score: Int?,
     val rank: Int
 )
