@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -45,8 +46,8 @@ class SettingsFragment : Fragment() {
         settingsViewModel.onHelpButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 val helpView: TextView = binding.root.findViewById(R.id.helpView)
-                val helpViewCloseButton: Button =
-                    binding.root.findViewById(R.id.helpViewCloseButton)
+                val helpViewBackground: ImageView = binding.root.findViewById(R.id.helpViewBackground)
+                val helpViewCloseButton: Button = binding.root.findViewById(R.id.helpViewCloseButton)
                 val helpButton: Button = binding.root.findViewById(R.id.shareButton)
                 val aboutUsButton: Button = binding.root.findViewById(R.id.aboutUsButton)
                 val shareButton: Button = binding.root.findViewById(R.id.helpButton)
@@ -56,14 +57,18 @@ class SettingsFragment : Fragment() {
                 shareButton.visibility = View.GONE
 
                 helpView.visibility = View.VISIBLE
+                helpViewBackground.visibility = View.VISIBLE
                 helpViewCloseButton.visibility = View.VISIBLE
 
                 helpViewCloseButton.setOnClickListener {
                     helpView.visibility = View.GONE
+                    helpViewBackground.visibility = View.GONE
                     helpViewCloseButton.visibility = View.GONE
+
                     helpButton.visibility = View.VISIBLE
                     aboutUsButton.visibility = View.VISIBLE
                     shareButton.visibility = View.VISIBLE
+                    settingsViewModel.onHelpButtonClicked.value = false
                 }
             }
 

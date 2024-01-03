@@ -7,7 +7,7 @@
     <string name="title_trivia">Trivia</string>
     <string name="title_end_quiz">End Quiz</string>
 
-    <string name="help_dialog_content">HomePage\nChoose any difficulty then enjoy a timed quiz where you can test your knowledge on the show.\n\nProfilePage\nPersonalize your experience by customizing your username and profile picture. You can also observe your game history in detail.\n\nInfoPage\nEnjoy the daily fun fact and also access the show\'s Instagram and Twitter/X official pages.\n\nSettingsPage\nGet an insight of the app or share it with your friends!\n</string>
+    <string name="help_dialog_content">Home Page\nChoose any difficulty then enjoy a timed quiz where you can test your knowledge on the show.\nProfile Page\nPersonalize your experience by customizing your username and profile picture. You can also observe your game history in detail.\nInfo Page\nEnjoy the fun facts and also access the show\'s Instagram and Twitter/X official pages.\nSettings Page\nGet an insight of the app or share it with your friends!\n</string>
 
     <string name="shared_preference_game_mode">Shared Preference Game Mode</string>
     <string name="game_mode_key">Game Mode</string>
