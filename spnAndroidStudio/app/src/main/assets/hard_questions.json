@@ -1,161 +1,9 @@
 [
   {
     "questionText": "From which episode is the screenshot above?",
-    "imageUrl": "https://cdn4.whatculture.com/images/2020/09/be659186a834a0e4-600x338.jpg",
-    "correctAnswer": "“Fan Fiction”",
-    "wrongAnswer1": "“Nightshifter”",
-    "wrongAnswer2": "“It’s a Terrible Life”",
-    "wrongAnswer3": "“Angel Heart”"
-  },
-  {
-    "questionText": "From which episode is the screenshot above?",
-    "imageUrl": "https://thewinchesterfamilybusiness.com/wp-content/uploads/2012/05/images_SeasonOne_Pilot_SamandDean.jpg",
-    "correctAnswer": "“Pilot”",
-    "wrongAnswer1": "“Jus In Bello”",
-    "wrongAnswer2": "“Last Call”",
-    "wrongAnswer3": "“Wayward Sisters”"
-  },
-  {
-    "questionText": "From which episode is the screenshot above?",
-    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/5/5d/Lucifer%27s_Cage.jpg/revision/latest?cb=20130411200620",
-    "correctAnswer": "“Swan Song”",
-    "wrongAnswer1": "“Sacrifice”",
-    "wrongAnswer2": "“Black”",
-    "wrongAnswer3": "“All Hell Breaks Loose, Part 2”"
-  },
-  {
-    "questionText": "How do you kill a werewolf?",
-    "imageUrl": "https://thewinchesterfamilybusiness.com/wp-content/uploads/2014/02/images_SeasonTwo_Heart_Madisonwerewolf.JPG",
-    "correctAnswer": "“Silver to the heart”",
-    "wrongAnswer1": "“Chocolate”",
-    "wrongAnswer2": "“Blessed spear”",
-    "wrongAnswer3": "“Rock salt”"
-  },
-  {
-    "questionText": "How do you trap an angel?",
-    "imageUrl": "https://images4.fanpop.com/image/photos/21700000/6x20-The-Man-Who-Would-be-King-supernatural-21787160-1280-720.jpg",
-    "correctAnswer": "“Holy fire ring”",
-    "wrongAnswer1": "“Cut its wings”",
-    "wrongAnswer2": "“Salt ring”",
-    "wrongAnswer3": "“Human ashes ring”"
-  },
-  {
-    "questionText": "What are leviathans sensible to?",
-    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/c/c5/SPN_1285.jpg/revision/latest?cb=20121005012319",
-    "correctAnswer": "“Borax”",
-    "wrongAnswer1": "“Sulphur”",
-    "wrongAnswer2": "“Artificial sweetener”",
-    "wrongAnswer3": "“Alcohol”"
-  },
-  {
-    "questionText": "What is the final trial to close the gates of Hell?",
-    "imageUrl": "https://www.thewinchesterfamilybusiness.com/wp-content/uploads/2021/08/823_SPN_1347.jpg",
-    "correctAnswer": "“Save an innocent soul from Hell and deliver it to Heaven”",
-    "wrongAnswer1": "“Cure a demon”",
-    "wrongAnswer2": "“Lock yourself in Hell”",
-    "wrongAnswer3": "“Kill a Hellhound and bathe in its blood”"
-  },
-  {
-    "questionText": "What is the name of Dean and Sam’s stepbrother?",
-    "imageUrl": "https://www.tvguide.com/a/img/hub/2019/10/07/4ad3f5cc-afea-4835-a656-42ebced62501/191007-supernatural-adam.jpg",
-    "correctAnswer": "“Adam”",
-    "wrongAnswer1": "“Travis”",
-    "wrongAnswer2": "“Steven”",
-    "wrongAnswer3": "“Jack”"
-  },
-  {
-    "questionText": "What is the name of the character from the screenshot above?",
-    "imageUrl": "https://tvserieswelove.com/wp-content/uploads/2019/10/maxresdefault-2.jpg",
-    "correctAnswer": "“Kevin Tran”",
-    "wrongAnswer1": "“Charles Bradbury”",
-    "wrongAnswer2": "“Jack Kline”",
-    "wrongAnswer3": "“Adam Milligan”"
-  },
-  {
-    "questionText": "What is the name of the character from the screenshot above?",
-    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/7/79/Lilith-S4.jpg/revision/latest?cb=20191116175339",
-    "correctAnswer": "“Lilith”",
-    "wrongAnswer1": "“Abaddon”",
-    "wrongAnswer2": "“Amara”",
-    "wrongAnswer3": "“Ruby”"
-  },
-  {
-    "questionText": "What is the name of the character from the screenshot above?",
-    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/a/a0/Meg5x10.png/revision/latest?cb=20141107032605",
-    "correctAnswer": "“Meg”",
-    "wrongAnswer1": "“Rowena”",
-    "wrongAnswer2": "“Ruby”",
-    "wrongAnswer3": "“Anna”"
-  },
-  {
-    "questionText": "What is the name of the demon who killed Mary Winchester?",
-    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/6/63/AzazelSPN.png/revision/latest/scale-to-width-down/1200?cb=20141111023822",
-    "correctAnswer": "“Azazel”",
-    "wrongAnswer1": "“Crowley”",
-    "wrongAnswer2": "“Alastair”",
-    "wrongAnswer3": "“Dagon”"
-  },
-  {
-    "questionText": "What is the name of the demon who tricks Sam into letting Lucifer out of the cage?",
-    "imageUrl": "https://www.comingsoon.net/wp-content/uploads/2020/03/ruby.jpg?w=800",
-    "correctAnswer": "“Ruby”",
-    "wrongAnswer1": "“Jo”",
-    "wrongAnswer2": "“Bela”",
-    "wrongAnswer3": "“Lilith”"
-  },
-  {
-    "questionText": "What is the name of the vampire who helped Dean get out of purgatory?",
-    "imageUrl": "https://onlineseries.com.br/wp-content/uploads/2022/09/Benny-Supernatural.jpg",
-    "correctAnswer": "“Benny”",
-    "wrongAnswer1": "“Henry”",
-    "wrongAnswer2": "“Alexander”",
-    "wrongAnswer3": "“Nicholas”"
-  },
-  {
-    "questionText": "What university did Sam go to?",
-    "imageUrl": "https://www.cbr.com/wp-content/uploads/2019/11/VSV4.jpg",
-    "correctAnswer": "“Stanford”",
-    "wrongAnswer1": "“Harvard”",
-    "wrongAnswer2": "“He never went to college”",
-    "wrongAnswer3": "“Oxford”"
-  },
-  {
-    "questionText": "Which characters spent a whole year in purgatory?",
-    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/1/12/SPN_0472Purgatory.jpg/revision/latest?cb=20130922140609",
-    "correctAnswer": "“Dean and Castiel”",
-    "wrongAnswer1": "“Bobby and Crowley”",
-    "wrongAnswer2": "“Castiel and Charlie”",
-    "wrongAnswer3": "“Sam and Dean”"
-  },
-  {
-    "questionText": "Who is Jack’s dad?",
-    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/2/28/Jack_regains_his_powers.png/revision/latest?cb=20190325171755",
-    "correctAnswer": "“Lucifer”",
-    "wrongAnswer1": "“Raphael”",
-    "wrongAnswer2": "“Castiel”",
-    "wrongAnswer3": "“Michael”"
-  },
-  {
-    "questionText": "Why does Dean make a demon deal at the end of season two?",
-    "imageUrl": "https://i0.wp.com/fangasmthebook.com/wp-content/uploads/SPN2x22BluRay_0402.jpg?resize=768%2C432&ssl=1",
-    "correctAnswer": "“To resurrect Sam”",
-    "wrongAnswer1": "“To kill Azazel”",
-    "wrongAnswer2": "“To resurrect Mary”",
-    "wrongAnswer3": "“To find John”"
-  },
-  {
-    "questionText": "Why is Castiel searching for purgatory?",
-    "imageUrl": "https://bighorrorguide.files.wordpress.com/2020/06/supernatural-s7-1.jpg",
-    "correctAnswer": "“To claim the souls”",
-    "wrongAnswer1": "“To hide in it”",
-    "wrongAnswer2": "“To destroy it”",
-    "wrongAnswer3": "“To find an angel”"
-  },
-  {
-    "questionText": "From which episode is the screenshot above?",
     "imageUrl": "https://m.media-amazon.com/images/M/MV5BYmQ1YzQ0ZjItYTU0NC00NTg0LTg0YzctMGZkNGNmNmUyYzk5XkEyXkFqcGdeQXVyMTU0MTM5NTI0._V1_.jpg",
-    "correctAnswer": "Swan Song",
-    "wrongAnswer1": "Carry On",
+    "correctAnswer": "Carry On",
+    "wrongAnswer1": "Swan Song",
     "wrongAnswer2": "Sacrifice",
     "wrongAnswer3": "Brother's Keeper"
   },
@@ -170,8 +18,8 @@
   {
     "questionText": "From which episode is the screenshot above?",
     "imageUrl": "https://i0.wp.com/fangasmthebook.com/wp-content/uploads/2018/01/screenshot-2018-01-20-23-01-51.jpg?ssl=1",
-    "correctAnswer": "The Real Ghostbusters",
-    "wrongAnswer1": "Wayward Sisters",
+    "correctAnswer": "Wayward Sisters",
+    "wrongAnswer1": "The Real Ghostbusters",
     "wrongAnswer2": "Adventures in Babysitting",
     "wrongAnswer3": "The Slice Girls"
   },
