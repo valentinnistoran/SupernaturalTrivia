@@ -8,6 +8,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.spntrivia.databinding.ActivityMainBinding
+import com.example.spntrivia.gameHistoryDB.GameDatabase
+import com.example.spntrivia.gameHistoryDB.QuizResultRepository
+import com.example.spntrivia.ui.trivia.TriviaViewModel
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -25,14 +29,17 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_info, R.id.navigation_profile, R.id.navigation_settings
+                R.id.navigation_home,
+                R.id.navigation_info,
+                R.id.navigation_profile,
+                R.id.navigation_settings
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+
 }

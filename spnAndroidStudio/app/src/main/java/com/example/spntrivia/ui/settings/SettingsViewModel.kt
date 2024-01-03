@@ -5,8 +5,20 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class SettingsViewModel : ViewModel() {
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is settings Fragment"
+
+    val onHelpButtonClicked = MutableLiveData(false)
+    val onAboutUsButtonClicked = MutableLiveData(false)
+    val onShareButtonClicked = MutableLiveData(false)
+
+    fun onClickHelpButton() {
+        onHelpButtonClicked.value = true
     }
-    val text: LiveData<String> = _text
+
+    fun onClickAboutUsButton() {
+        onAboutUsButtonClicked.value = true
+    }
+
+    fun onClickShareButton() {
+        onShareButtonClicked.value = true
+    }
 }
