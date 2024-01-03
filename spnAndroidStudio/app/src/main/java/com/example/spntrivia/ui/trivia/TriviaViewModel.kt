@@ -12,7 +12,7 @@ import java.io.IOException
 
 class TriviaViewModel() : ViewModel() {
 
-//    var levelDifficulty = 0
+    //    var levelDifficulty = 0
     val levelDifficulty = MutableLiveData(0)
 
     val onQuitButtonClicked = MutableLiveData(false)

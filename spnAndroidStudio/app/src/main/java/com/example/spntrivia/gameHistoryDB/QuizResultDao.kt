@@ -20,4 +20,7 @@ interface QuizResultDao {
 
     @Query("SELECT * FROM quiz_results ORDER BY id DESC")
     fun getAllResults(): LiveData<List<QuizResult>>
+
+    @Query("SELECT * FROM quiz_results ORDER BY id DESC LIMIT 1")
+    fun getLastResult(): LiveData<QuizResult?>
 }

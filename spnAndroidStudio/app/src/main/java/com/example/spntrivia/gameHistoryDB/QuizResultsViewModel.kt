@@ -9,13 +9,15 @@ import kotlinx.coroutines.launch
 
 class QuizResultsViewModel(application: Application):AndroidViewModel(application) {
 
-    private val readAllData: LiveData<List<QuizResult>>
+    val readAllData: LiveData<List<QuizResult>>
+    val lastResult : LiveData<QuizResult?>
     private val quizResultRepository: QuizResultRepository
 
     init {
         val gameResultDao = GameDatabase.getDatabase(application).quizResultDao()
         quizResultRepository = QuizResultRepository(gameResultDao)
         readAllData = quizResultRepository.getAllResults()
+        lastResult = quizResultRepository.getLastResult()
     }
 
     fun addQuizResult(quizResult: QuizResult){

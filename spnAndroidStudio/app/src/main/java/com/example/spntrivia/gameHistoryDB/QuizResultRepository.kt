@@ -13,6 +13,10 @@ class QuizResultRepository(private val quizResultDao: QuizResultDao) {
         return quizResultDao.getAllResults()
     }
 
+    fun getLastResult(): LiveData<QuizResult?> {
+        return quizResultDao.getLastResult()
+    }
+
     suspend fun deleteResults(quizResult: QuizResult) = quizResultDao.deleteResults(quizResult)
 
     suspend fun updateResults(quizResult: QuizResult) = quizResultDao.updateResults(quizResult)
