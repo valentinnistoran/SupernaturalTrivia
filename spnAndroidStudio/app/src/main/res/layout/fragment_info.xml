@@ -72,10 +72,10 @@
 
         <ImageButton
             android:id="@+id/instagramButton"
-            android:onClick="@{()->infoViewModel.onClickInstagramButton()}"
             android:layout_width="264dp"
             android:layout_height="48dp"
             android:layout_marginTop="28dp"
+            android:onClick="@{()->infoViewModel.onClickInstagramButton()}"
             android:padding="0dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,9 +101,9 @@
 
         <ImageButton
             android:id="@+id/twitterButton"
-            android:onClick="@{()->infoViewModel.onClickTwitterButton()}"
             android:layout_width="264dp"
             android:layout_height="48dp"
+            android:onClick="@{()->infoViewModel.onClickTwitterButton()}"
             android:padding="0dp"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"

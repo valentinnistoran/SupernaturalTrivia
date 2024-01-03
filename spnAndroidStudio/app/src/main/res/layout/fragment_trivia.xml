@@ -64,8 +64,8 @@
             android:fontFamily="serif"
             android:text="/10"
             app:layout_constraintBottom_toTopOf="@id/quiz_timer"
-            app:layout_constraintStart_toEndOf="@id/quiz_number"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@id/quiz_number"
             app:layout_constraintTop_toBottomOf="@id/quit_button" />
 
         <TextView
@@ -75,8 +75,8 @@
             android:fontFamily="serif"
             android:text='@{"Score: " + String.valueOf(triviaViewModel.score)}'
             app:layout_constraintBottom_toTopOf="@id/quiz_image"
-            app:layout_constraintStart_toStartOf="@+id/quiz_image"
             app:layout_constraintRight_toLeftOf="@id/quiz_timer"
+            app:layout_constraintStart_toStartOf="@+id/quiz_image"
             app:layout_constraintTop_toBottomOf="@id/quiz_number" />
 
         <TextView
@@ -86,8 +86,8 @@
             android:fontFamily="serif"
             android:text='@{"Time:" + triviaViewModel.triviaTimerLiveData}'
             app:layout_constraintBottom_toTopOf="@id/quiz_image"
-            app:layout_constraintLeft_toRightOf="@id/quiz_score"
             app:layout_constraintEnd_toEndOf="@id/quiz_image"
+            app:layout_constraintLeft_toRightOf="@id/quiz_score"
             app:layout_constraintTop_toBottomOf="@id/quiz_number" />
 
         <ImageView

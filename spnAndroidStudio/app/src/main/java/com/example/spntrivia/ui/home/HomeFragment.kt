@@ -68,7 +68,6 @@ class HomeFragment : Fragment() {
             if (isClicked) {
                 hideBottomNavigation()
                 navigateToTriviaFragment(1) // 1 for easy mode
-                Toast.makeText(requireContext(), "From Easy", Toast.LENGTH_LONG).show()
                 homeViewModel.onEasyButtonClicked.value = false
             }
         }
@@ -79,7 +78,6 @@ class HomeFragment : Fragment() {
             if (isClicked) {
                 hideBottomNavigation()
                 navigateToTriviaFragment(2) // 2 for medium mode
-                Toast.makeText(requireContext(), "From Medium", Toast.LENGTH_LONG).show()
                 homeViewModel.onMediumButtonClicked.value = false
             }
         }
@@ -90,7 +88,6 @@ class HomeFragment : Fragment() {
             if (isClicked) {
                 hideBottomNavigation()
                 navigateToTriviaFragment(3) // 3 for hard mode
-                Toast.makeText(requireContext(), "From Hard", Toast.LENGTH_LONG).show()
                 homeViewModel.onHardButtonClicked.value = false
             }
         }

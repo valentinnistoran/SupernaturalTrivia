@@ -5,14 +5,13 @@ import android.content.Context
 import android.os.CountDownTimer
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.spntrivia.triviaDB.QuestionTrivia
+import com.example.spntrivia.ui.trivia.business.QuestionTrivia
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
 
 class TriviaViewModel() : ViewModel() {
 
-    //    var levelDifficulty = 0
     val levelDifficulty = MutableLiveData(0)
 
     val onQuitButtonClicked = MutableLiveData(false)
@@ -66,9 +65,6 @@ class TriviaViewModel() : ViewModel() {
             timerFinished.value = true
         }
     }
-
-
-    //private lateinit var quizResultRepository: QuizResultRepository
 
     //onClick functions
     fun onClickQuitButton() {
@@ -182,7 +178,6 @@ class TriviaViewModel() : ViewModel() {
         isAnswer4ButtonClicked.value = false
         if (index in questions.indices) {
             val question = questions[index]
-            var correctAnswer = question.correctAnswer
             setAnswerButtons(question)
             triviaQuestionLiveData.value = question
         }
@@ -193,7 +188,6 @@ class TriviaViewModel() : ViewModel() {
         questionsAnswered.value = questionsAnswered.value?.plus(1)
         if (questionsAnswered.value == 10) {
             questionsAnswered.value = 0
-//            score.value?.let { insertQuizResult(levelDifficulty, it,10) }
             //go to end page
         }
     }
@@ -233,10 +227,4 @@ class TriviaViewModel() : ViewModel() {
         finalScore.value = finalScore.value?.div(100)
     }
 
-//    fun insertQuizResult(difficulty: Int, score: Int, rank: Int) {
-//        viewModelScope.launch {
-//            val quizResult = QuizResult(difficulty = difficulty, score = score, rank = rank)
-//            quizResultRepository.insertResults(quizResult)
-//        }
-//    }
 }

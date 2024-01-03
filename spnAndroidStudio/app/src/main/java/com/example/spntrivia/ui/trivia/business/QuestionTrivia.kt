@@ -1,4 +1,4 @@
-package com.example.spntrivia.triviaDB
+package com.example.spntrivia.ui.trivia.business
 
 data class QuestionTrivia(
     val questionText: String,

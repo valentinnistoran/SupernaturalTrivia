@@ -15,10 +15,6 @@ import com.example.spntrivia.ui.trivia.TriviaViewModel
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    //private lateinit var triviaDatabase: TriviaDatabase
-    private lateinit var gameDatabase: GameDatabase
-    private lateinit var quizResultRepository: QuizResultRepository
-    private lateinit var triviaViewModel: TriviaViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,20 +26,15 @@ class MainActivity : AppCompatActivity() {
             supportActionBar!!.hide()
         }
 
-        //triviaDatabase = TriviaDatabase.getDatabase(this)
-//        gameDatabase = GameDatabase.getDatabase(this)
-//        quizResultRepository = QuizResultRepository(gameDatabase.quizResultDao())
-//        triviaViewModel = TriviaViewModel(quizResultRepository)
-
-
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_info, R.id.navigation_profile, R.id.navigation_settings
+                R.id.navigation_home,
+                R.id.navigation_info,
+                R.id.navigation_profile,
+                R.id.navigation_settings
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

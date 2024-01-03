@@ -94,19 +94,6 @@
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/open_profile"
-            app:layout_constraintTop_toBottomOf="@+id/message" />
-
-        <Button
-            android:id="@+id/open_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:onClick="@{()->endQuizViewModel.onClickOpenProfileButton()}"
-            android:text="See Your\n Game History"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/back_home_button"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/message" />
 

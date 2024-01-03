@@ -33,12 +33,11 @@ class EndQuizFragment : Fragment() {
         binding.endQuizViewModel = endQuizViewModel
 
         quizResultsViewModel = ViewModelProvider(this).get(QuizResultsViewModel::class.java)
-        quizResultsViewModel.lastResult.observe(this, Observer {quizResult ->
+        quizResultsViewModel.lastResult.observe(this, Observer { quizResult ->
             endQuizViewModel.observeLastQuizResult(quizResult)
         })
 
         backHomeObserver()
-        openProfileObserver()
 
         return binding.root
     }
@@ -72,19 +71,6 @@ class EndQuizFragment : Fragment() {
             if (isClicked) {
                 findNavController().popBackStack(R.id.navigation_home, false)
                 endQuizViewModel.onBackHomeButtonClicked.value = false
-            }
-
-        }
-    }
-
-    private fun openProfileObserver() {
-        endQuizViewModel.onOpenProfileButtonClicked.observe(viewLifecycleOwner) { isClicked ->
-            if (isClicked) {
-                //from here it should go to the profile page
-                findNavController().popBackStack(R.id.navigation_home, false)
-//                findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
-//                findNavController().navigate(R.id.navigation_profile)
-                endQuizViewModel.onOpenProfileButtonClicked.value = false
             }
 
         }

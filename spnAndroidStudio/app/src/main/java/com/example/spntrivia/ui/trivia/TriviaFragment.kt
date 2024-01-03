@@ -2,7 +2,6 @@ package com.example.spntrivia.ui.trivia
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -64,8 +63,6 @@ class TriviaFragment : Fragment() {
 
     private fun questionsAnsweredObserver() {
         triviaViewModel.questionsAnswered.observe(viewLifecycleOwner) { answeredCount ->
-            Log.d("TriviaFragment", "Answered question count: $answeredCount")
-
             binding.quizNumber.text = Integer.toString(answeredCount)
             binding.executePendingBindings()
         }
@@ -100,6 +97,18 @@ class TriviaFragment : Fragment() {
             insertDataToDatabase()
             findNavController().navigate(R.id.action_triviaFragment_to_endQuizFragment)
         }
+    }
+
+    private fun insertDataToDatabase() {
+        val chosenDifficulty = triviaViewModel.levelDifficulty.value
+        val calculatedScore = triviaViewModel.score.value //TODO: modify with the calculated score
+        val calculatedRank = 10
+
+        val quizResult = QuizResult(0, chosenDifficulty, calculatedScore, calculatedRank)
+
+        quizResultsViewModel.addQuizResult(quizResult)
+        Toast.makeText(requireContext(), "Added Successfully", Toast.LENGTH_LONG).show()
+
     }
 
 
@@ -190,15 +199,4 @@ class TriviaFragment : Fragment() {
         }
     }
 
-    private fun insertDataToDatabase() {
-        val chosenDifficulty = triviaViewModel.levelDifficulty.value
-        val calculatedScore = triviaViewModel.score.value //TODO: modify with the calculated score
-        val calculatedRank = 10
-
-        val quizResult = QuizResult(0, chosenDifficulty, calculatedScore, calculatedRank)
-
-        quizResultsViewModel.addQuizResult(quizResult)
-        Toast.makeText(requireContext(), "Added Successfully", Toast.LENGTH_LONG).show()
-
-    }
 }

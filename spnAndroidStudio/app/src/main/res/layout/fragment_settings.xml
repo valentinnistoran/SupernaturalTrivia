@@ -40,35 +40,35 @@
             android:text="X"
             android:textColor="@color/white"
             android:textSize="16sp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/helpView"
             android:layout_width="350dp"
             android:layout_height="500dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="100dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:padding="8dp"
+            android:background="@drawable/dean_judging_us"
             android:fontFamily="serif"
+            android:padding="8dp"
             android:text="@string/help_dialog_content"
             android:textSize="18sp"
-            android:background="@drawable/dean_judging_us"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_info"
-            android:visibility="gone" />
+            app:layout_constraintTop_toBottomOf="@+id/text_info" />
 
         <Button
             android:id="@+id/shareButton"
-            android:onClick="@{()->settingsViewModel.onClickShareButton()}"
             android:layout_width="320dp"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/bloody_red"
             android:fontFamily="serif"
+            android:onClick="@{()->settingsViewModel.onClickShareButton()}"
             android:text="Share"
             android:textAlignment="center"
             android:textAllCaps="false"
@@ -81,12 +81,12 @@
 
         <Button
             android:id="@+id/aboutUsButton"
-            android:onClick="@{()->settingsViewModel.onClickAboutUsButton()}"
             android:layout_width="320dp"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/bloody_red"
             android:fontFamily="serif"
+            android:onClick="@{()->settingsViewModel.onClickAboutUsButton()}"
             android:text="About Us"
             android:textAlignment="center"
             android:textAllCaps="false"
@@ -99,12 +99,12 @@
 
         <Button
             android:id="@+id/helpButton"
-            android:onClick="@{()->settingsViewModel.onClickHelpButton()}"
             android:layout_width="320dp"
             android:layout_height="60dp"
             android:layout_marginTop="136dp"
             android:backgroundTint="@color/bloody_red"
             android:fontFamily="serif"
+            android:onClick="@{()->settingsViewModel.onClickHelpButton()}"
             android:text="Help"
             android:textAlignment="center"
             android:textAllCaps="false"

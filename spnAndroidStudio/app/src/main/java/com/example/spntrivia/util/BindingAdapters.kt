@@ -11,7 +11,7 @@ fun loadImage(view: ImageView, imageUrl: String?) {
     imageUrl?.let {
         Glide.with(view.context)
             .load(it)
-            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC) // or DiskCacheStrategy.ALL
+            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
             .into(view)
 
     }

@@ -7,10 +7,10 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class QuizResultsViewModel(application: Application):AndroidViewModel(application) {
+class QuizResultsViewModel(application: Application) : AndroidViewModel(application) {
 
     val readAllData: LiveData<List<QuizResult>>
-    val lastResult : LiveData<QuizResult?>
+    val lastResult: LiveData<QuizResult?>
     private val quizResultRepository: QuizResultRepository
 
     init {
@@ -20,17 +20,11 @@ class QuizResultsViewModel(application: Application):AndroidViewModel(applicatio
         lastResult = quizResultRepository.getLastResult()
     }
 
-    fun addQuizResult(quizResult: QuizResult){
+    fun addQuizResult(quizResult: QuizResult) {
         viewModelScope.launch(Dispatchers.IO) {
             quizResultRepository.insertResults(quizResult)
         }
     }
 
-//    fun insertQuizResult(difficulty: Int, score: Int, rank: Int){
-//        viewModelScope.launch(Dispatchers.IO) {
-//            val quizResult = QuizResult(difficulty = difficulty, score = score, rank = rank)
-//            quizResultRepository.insertResults(quizResult)
-//        }
-//    }
 
 }
