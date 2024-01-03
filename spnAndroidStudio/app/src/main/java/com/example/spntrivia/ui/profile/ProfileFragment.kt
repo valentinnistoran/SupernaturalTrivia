@@ -9,12 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spntrivia.databinding.FragmentProfileBinding
+import com.example.spntrivia.gameHistoryDB.QuizResultsViewModel
 
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
     private val profileViewModel: ProfileViewModel by viewModels()
+    private lateinit var quizResultsViewModel: QuizResultsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +33,17 @@ class ProfileFragment : Fragment() {
         binding.profileImage.setOnClickListener {
             openImagePicker()
         }
+
+        val adapter = HistoryAdapter()
+        val recyclerView = binding.recyclerView
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager =LinearLayoutManager(requireContext())
+
+
+        quizResultsViewModel = ViewModelProvider(this).get(QuizResultsViewModel::class.java)
+        quizResultsViewModel.readAllData.observe(this, Observer { quizResult ->
+            adapter.setData(quizResult)
+        })
 
         return binding.root
     }
