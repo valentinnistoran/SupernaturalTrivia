@@ -117,8 +117,10 @@
             android:elevation="8dp"
             android:text="Score"
             app:layout_constraintBottom_toTopOf="@id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toRightOf="@id/difficulty"
             app:layout_constraintRight_toLeftOf="@id/rank"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gameHistoryLabel" />
 
         <TextView
