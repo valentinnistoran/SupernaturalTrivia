@@ -182,6 +182,7 @@ class TriviaFragment : Fragment() {
         triviaViewModel.triviaTimerLiveData.observe(viewLifecycleOwner) { remainingTime ->
             binding.quizTimer.text = "Time: $remainingTime s"
             if (triviaViewModel.timerFinished.value == true) {
+                insertDataToDatabase()
                 findNavController().navigate(R.id.action_triviaFragment_to_endQuizFragment)
                 triviaViewModel.timerFinished.value = false
             }
@@ -191,6 +192,7 @@ class TriviaFragment : Fragment() {
     private fun timerFinishedObserver() {
         triviaViewModel.timerFinished.observe(viewLifecycleOwner) {
             if (triviaViewModel.timerFinished.value == true) {
+                insertDataToDatabase()
                 findNavController().navigate(R.id.action_triviaFragment_to_endQuizFragment)
                 triviaViewModel.timerFinished.value = false
             }
