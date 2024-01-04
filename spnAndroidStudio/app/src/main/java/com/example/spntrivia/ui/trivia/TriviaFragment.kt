@@ -101,8 +101,8 @@ class TriviaFragment : Fragment() {
 
     private fun insertDataToDatabase() {
         val chosenDifficulty = triviaViewModel.levelDifficulty.value
-        val calculatedScore = triviaViewModel.finalScore.value //TODO: modify with the calculated score
-        val calculatedRank = 10
+        val calculatedScore = triviaViewModel.finalScore.value
+        val calculatedRank = triviaViewModel.score.value
 
         val quizResult = QuizResult(0, chosenDifficulty, calculatedScore, calculatedRank)
 
@@ -148,7 +148,6 @@ class TriviaFragment : Fragment() {
         triviaViewModel.onAnswer1ButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 triviaViewModel.isRightAnswer(triviaViewModel.answer1.value.toString())
-                //triviaViewModel.onAnswer1ButtonClicked.value = false
             }
         }
     }
@@ -157,7 +156,6 @@ class TriviaFragment : Fragment() {
         triviaViewModel.onAnswer2ButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 triviaViewModel.isRightAnswer(triviaViewModel.answer2.value.toString())
-                //triviaViewModel.onAnswer2ButtonClicked.value = false
             }
         }
     }
@@ -166,7 +164,6 @@ class TriviaFragment : Fragment() {
         triviaViewModel.onAnswer3ButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 triviaViewModel.isRightAnswer(triviaViewModel.answer3.value.toString())
-                //triviaViewModel.onAnswer3ButtonClicked.value = false
             }
         }
     }
@@ -175,7 +172,6 @@ class TriviaFragment : Fragment() {
         triviaViewModel.onAnswer4ButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 triviaViewModel.isRightAnswer(triviaViewModel.answer4.value.toString())
-                //triviaViewModel.onAnswer4ButtonClicked.value = false
             }
         }
     }
