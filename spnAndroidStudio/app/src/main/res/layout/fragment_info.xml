@@ -163,7 +163,7 @@
             android:fontFamily="serif"
             android:gravity="center"
             android:maxLines="10"
-            android:text="Fun fact of the day"
+            android:text="Fun fact"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
