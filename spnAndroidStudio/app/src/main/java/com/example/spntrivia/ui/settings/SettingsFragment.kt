@@ -68,8 +68,8 @@ class SettingsFragment : Fragment() {
                     helpButton.visibility = View.VISIBLE
                     aboutUsButton.visibility = View.VISIBLE
                     shareButton.visibility = View.VISIBLE
-                    settingsViewModel.onHelpButtonClicked.value = false
                 }
+                settingsViewModel.onHelpButtonClicked.value = false
             }
 
         }
@@ -91,6 +91,7 @@ class SettingsFragment : Fragment() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
+                settingsViewModel.onAboutUsButtonClicked.value = false
             }
 
         }
@@ -118,6 +119,7 @@ class SettingsFragment : Fragment() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
+                settingsViewModel.onShareButtonClicked.value = false
             }
 
         }
