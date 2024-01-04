@@ -46,8 +46,10 @@ class SettingsFragment : Fragment() {
         settingsViewModel.onHelpButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 val helpView: TextView = binding.root.findViewById(R.id.helpView)
-                val helpViewBackground: ImageView = binding.root.findViewById(R.id.helpViewBackground)
-                val helpViewCloseButton: Button = binding.root.findViewById(R.id.helpViewCloseButton)
+                val helpViewBackground: ImageView =
+                    binding.root.findViewById(R.id.helpViewBackground)
+                val helpViewCloseButton: Button =
+                    binding.root.findViewById(R.id.helpViewCloseButton)
                 val helpButton: Button = binding.root.findViewById(R.id.shareButton)
                 val aboutUsButton: Button = binding.root.findViewById(R.id.aboutUsButton)
                 val shareButton: Button = binding.root.findViewById(R.id.helpButton)

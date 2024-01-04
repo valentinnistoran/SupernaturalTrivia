@@ -1,6 +1,6 @@
 package com.example.spntrivia.ui.endQuiz.business
 
-data class Ranking (
+data class Ranking(
     val imageUrl: String,
     val rankScore: Int,
     val rankTitle: String,

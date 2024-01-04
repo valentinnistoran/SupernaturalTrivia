@@ -49,10 +49,10 @@
             android:layout_width="465dp"
             android:layout_height="542dp"
             android:visibility="gone"
-            app:layout_constraintTop_toTopOf="@+id/helpView"
             app:layout_constraintBottom_toBottomOf="@+id/helpView"
-            app:layout_constraintStart_toStartOf="@+id/helpView"
             app:layout_constraintEnd_toEndOf="@+id/helpView"
+            app:layout_constraintStart_toStartOf="@+id/helpView"
+            app:layout_constraintTop_toTopOf="@+id/helpView"
             app:srcCompat="@drawable/pergament" />
 
         <TextView

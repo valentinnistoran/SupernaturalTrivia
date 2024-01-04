@@ -10,10 +10,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:elevation="8dp"
-        android:text="Easy"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Easy"
         app:layout_constraintEnd_toStartOf="@id/calculated_score"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.33" />
 
@@ -22,10 +22,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:elevation="8dp"
-        android:text="10"
         android:gravity="center"
-        app:layout_constraintStart_toEndOf="@id/chosen_difficulty"
+        android:text="10"
         app:layout_constraintEnd_toStartOf="@id/calculated_rank"
+        app:layout_constraintStart_toEndOf="@id/chosen_difficulty"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.33" />
 
@@ -34,10 +34,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:elevation="8dp"
-        android:text="Man of Letters"
         android:gravity="center"
-        app:layout_constraintStart_toEndOf="@id/calculated_score"
+        android:text="Man of Letters"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/calculated_score"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.33" />
 
@@ -45,9 +45,9 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="25sp"
+        android:alpha="0.5"
         android:background="@color/bloody_red"
         android:elevation="0dp"
-        android:alpha="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

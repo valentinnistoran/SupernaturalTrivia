@@ -41,7 +41,7 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.MyViewHolder>() {
         holder.calculatedRank.text = currentResult.rankTitle
     }
 
-    fun setData(result: List<QuizResult>){
+    fun setData(result: List<QuizResult>) {
         this.resultList = result
         notifyDataSetChanged()
     }

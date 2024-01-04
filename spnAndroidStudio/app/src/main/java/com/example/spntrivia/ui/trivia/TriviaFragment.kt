@@ -39,11 +39,6 @@ class TriviaFragment : Fragment() {
         questionsAnsweredObserver()
         quitButtonObserver()
         skipButtonObserver()
-        nextButtonObserver()
-        answer1ButtonObserver()
-        answer2ButtonObserver()
-        answer3ButtonObserver()
-        answer4ButtonObserver()
         timerObserver()
         timerFinishedObserver()
 
@@ -59,6 +54,11 @@ class TriviaFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+        nextButtonObserver()
+        answer1ButtonObserver()
+        answer2ButtonObserver()
+        answer3ButtonObserver()
+        answer4ButtonObserver()
     }
 
     private fun questionsAnsweredObserver() {

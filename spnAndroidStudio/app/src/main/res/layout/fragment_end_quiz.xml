@@ -35,9 +35,9 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
+            android:gravity="center"
             android:text='@{"credit: " + endQuizViewModel.rankLiveData.imageUrl.toString()}'
             android:textSize="6sp"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/end_quiz_picture" />
@@ -80,8 +80,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="68dp"
             android:fontFamily="serif"
-            android:text="@{endQuizViewModel.rankLiveData.rankMessage}"
             android:gravity="center"
+            android:text="@{endQuizViewModel.rankLiveData.rankMessage}"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold"

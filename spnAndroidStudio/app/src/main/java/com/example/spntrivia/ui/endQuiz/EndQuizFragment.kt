@@ -57,6 +57,7 @@ class EndQuizFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
+
     private fun showBackHomeDialogue() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Back Home?")
