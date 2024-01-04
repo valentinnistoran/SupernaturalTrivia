@@ -86,5 +86,117 @@
     "wrongAnswer1": "To kill Lucifer",
     "wrongAnswer2": "To close the gates of Hell",
     "wrongAnswer3": "To put Lucifer back in the cage"
+  },
+  {
+    "questionText": "What is the name of the character from the screenshot above?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernaturalfanon/images/c/c1/Cole_Trenton.jpg/revision/latest?cb=20160302053036",
+    "correctAnswer": "Cole",
+    "wrongAnswer1": "Jake",
+    "wrongAnswer2": "Jerry",
+    "wrongAnswer3": "Pete"
+  },
+  {
+    "questionText": "How killed Samandriel aka Alfie?",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzZkOWQ3ODItMjkyOC00ODMxLTg5ZWQtODNkOTNhMDU2NDZmXkEyXkFqcGdeQXVyMjA3MDk2MDE@._V1_.jpg",
+    "correctAnswer": "Castiel",
+    "wrongAnswer1": "Crowley",
+    "wrongAnswer2": "Dean",
+    "wrongAnswer3": "Naomi"
+  },
+  {
+    "questionText": "What kind of monster was Sam's friend, Amy?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/b/b1/Amy_Pond.jpg/revision/latest/scale-to-width-down/1200?cb=20111008151827",
+    "correctAnswer": "Kitsune",
+    "wrongAnswer1": "Vetala",
+    "wrongAnswer2": "Wraith",
+    "wrongAnswer3": "Siren"
+  },
+  {
+    "questionText": "What is the name of the character from the screenshot above?",
+    "imageUrl": "https://pm1.aminoapps.com/5793/1ae6811526ea583b2522feae3f0c70b028941c3a_hq.jpg",
+    "correctAnswer": "Tessa",
+    "wrongAnswer1": "Mariah",
+    "wrongAnswer2": "Colette",
+    "wrongAnswer3": "Astrid"
+  },
+  {
+    "questionText": "Besides James Dean, Lincoln, and Gandhi, which famous person did the Leshi turn into?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/e/e6/Gandi_attacks_Sam.jpg/revision/latest/scale-to-width-down/1000?cb=20110809212925",
+    "correctAnswer": "Paris Hilton",
+    "wrongAnswer1": "Donald Trump",
+    "wrongAnswer2": "Lady Gaga",
+    "wrongAnswer3": "LeBron James"
+  },
+  {
+    "questionText": "Who is responsible for creating the Leviathans, and what is their original purpose?",
+    "imageUrl": "https://i.pinimg.com/736x/a0/62/d0/a062d080bdc6c6fa036408de7cfe7a28.jpg",
+    "correctAnswer": "God created them as the first beasts, but they became uncontrollable",
+    "wrongAnswer1": "Lucifer created them to serve him in the war",
+    "wrongAnswer2": "The Men of Letters experimented with creating powerful creatures",
+    "wrongAnswer3": "Death created them to maintain balance in the universe"
+  },
+  {
+    "questionText": "In what order did the Winchester brothers collect the Rings of the Horsemen in Supernatural?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/7/7f/4Rings.jpg/revision/latest?cb=20120624235846",
+    "correctAnswer": "War's ring, Famine's ring, Pestilence's ring, and Death's ring",
+    "wrongAnswer1": "Pestilence's ring, Famine's ring, Death's ring, and War's ring",
+    "wrongAnswer2": "Pestilence's ring, Death's ring, Famine's ring, and War's ring",
+    "wrongAnswer3": "Death's ring, Famine's ring, War's ring, and Pestilence's ring"
+  },
+  {
+    "questionText": "What is the name of this weapon?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/1/14/Firstblade.jpg/revision/latest?cb=20141101190726",
+    "correctAnswer": "The First Blade",
+    "wrongAnswer1": "Cain's Blade",
+    "wrongAnswer2": "The Wild Knife",
+    "wrongAnswer3": "The Reaper"
+  },
+  {
+    "questionText": "What item did Daniel Elikns possess before it got stolen by vamps in the episode \"Dead Man's Blood\"?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/1/1b/Daniel_Elkinsnewcap.jpg/revision/latest?cb=20111012134647",
+    "correctAnswer": "The Colt",
+    "wrongAnswer1": "The Book of the Damned",
+    "wrongAnswer2": "The Demon-killing Knife",
+    "wrongAnswer3": "The First Blade"
+  },
+  {
+    "questionText": "Which of the following characters is not a Prince of Hell?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/6/63/AzazelSPN.png/revision/latest?cb=20141111023822",
+    "correctAnswer": "Cain",
+    "wrongAnswer1": "Ramiel",
+    "wrongAnswer2": "Dagon",
+    "wrongAnswer3": "Asmodeus"
+  },
+  {
+    "questionText": "Which of the following names is not one of Sam's love interests?",
+    "imageUrl": "https://non-productive.com/wp-content/uploads/2014/04/A-Very-Supernatural-Christmas-sam-winchester-2305308-1280-720.jpg",
+    "correctAnswer": "Lily Sunder",
+    "wrongAnswer1": "Amelia Richardson",
+    "wrongAnswer2": "Eileen Leahy",
+    "wrongAnswer3": "Sarah Blake"
+  },
+  {
+    "questionText": "What is the name of the character from the screenshot above?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/4/47/Kelly_Kline_1408.png/revision/latest?cb=20181207135313",
+    "correctAnswer": "Kelly Kline",
+    "wrongAnswer1": "Eileen Leahy",
+    "wrongAnswer2": "Jo Harvelle",
+    "wrongAnswer3": "Missouri Moseley"
+  },
+  {
+    "questionText": "Who is the first possessor of the Mark of Cain?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/b/b0/ImageMOC.jpg/revision/latest?cb=20151229222923",
+    "correctAnswer": "Lucifer",
+    "wrongAnswer1": "Cain",
+    "wrongAnswer2": "Dean",
+    "wrongAnswer3": "Jack"
+  },
+  {
+    "questionText": "What happened to Amara in season 15?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/9/95/AmaraII.jpg/revision/latest?cb=20160516030155",
+    "correctAnswer": "She merged with Chuck at his suggestion",
+    "wrongAnswer1": "Dean killed her",
+    "wrongAnswer2": "She got locked up again",
+    "wrongAnswer3": "She sacrificed herself in order to save the world"
   }
 ]
