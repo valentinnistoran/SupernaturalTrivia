@@ -9,5 +9,6 @@ data class QuizResult(
     val id: Long = 0L,
     val difficulty: Int?,
     val score: Long?,
-    val rank: Int?
+    val rank: Int?,
+    val rankTitle: String?
 )

@@ -103,8 +103,10 @@ class TriviaFragment : Fragment() {
         val chosenDifficulty = triviaViewModel.levelDifficulty.value
         val calculatedScore = triviaViewModel.finalScore.value
         val calculatedRank = triviaViewModel.score.value
+        val calculatedRankText = triviaViewModel.rank.value
 
-        val quizResult = QuizResult(0, chosenDifficulty, calculatedScore, calculatedRank)
+        val quizResult =
+            QuizResult(0, chosenDifficulty, calculatedScore, calculatedRank, calculatedRankText)
 
         quizResultsViewModel.addQuizResult(quizResult)
         Toast.makeText(requireContext(), "Added Successfully", Toast.LENGTH_LONG).show()

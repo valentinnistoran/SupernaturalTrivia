@@ -7,6 +7,7 @@ import com.example.spntrivia.gameHistoryDB.QuizResult
 import com.example.spntrivia.ui.endQuiz.business.Ranking
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.io.IOException
 
 class EndQuizViewModel : ViewModel() {
 
@@ -34,12 +35,17 @@ class EndQuizViewModel : ViewModel() {
     }
 
     fun loadRanks(context: Context) {
-        val json: String = context.assets.open("ranking.json").bufferedReader().use {
-            it.readText()
+        try {
+            val json: String = context.assets.open("ranking.json").bufferedReader().use {
+                it.readText()
+            }
+            val rankingListType = object : TypeToken<List<Ranking>>() {}.type
+            ranksList = Gson().fromJson(json, rankingListType)
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
 
-        val rankingListType = object : TypeToken<List<Ranking>>() {}.type
-        ranksList = Gson().fromJson(json, rankingListType)
+
     }
 
 }
