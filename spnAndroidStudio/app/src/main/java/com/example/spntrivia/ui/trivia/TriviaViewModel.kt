@@ -77,6 +77,12 @@ class TriviaViewModel() : ViewModel() {
         onSkipButtonClicked.value = true
         answeredQuestions()
         loadNextQuestion()
+        if(isQuestion10.value==true)
+        {
+            calculateScore()
+            calculateRank()
+        }
+        resetAnswerButtonStates()
     }
 
     fun onClickAnswer1Button() {
@@ -115,6 +121,11 @@ class TriviaViewModel() : ViewModel() {
         onNextButtonClicked.value = true
         answeredQuestions()
         loadNextQuestion()
+        if(isQuestion10.value==true)
+        {
+            calculateScore()
+            calculateRank()
+        }
         resetAnswerButtonStates()
     }
 
@@ -201,8 +212,6 @@ class TriviaViewModel() : ViewModel() {
         if (questionsAnswered.value == 10) {
             isQuestion10.value = true
             questionsAnswered.value = 0
-            calculateScore()
-            calculateRank()
             //go to end page
         }
     }
