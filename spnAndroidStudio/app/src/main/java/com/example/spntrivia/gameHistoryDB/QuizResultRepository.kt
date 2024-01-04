@@ -1,8 +1,6 @@
 package com.example.spntrivia.gameHistoryDB
 
 import androidx.lifecycle.LiveData
-import com.example.spntrivia.gameHistoryDB.QuizResult
-import com.example.spntrivia.gameHistoryDB.QuizResultDao
 
 class QuizResultRepository(private val quizResultDao: QuizResultDao) {
     suspend fun insertResults(quizResult: QuizResult) {
@@ -17,7 +15,7 @@ class QuizResultRepository(private val quizResultDao: QuizResultDao) {
         return quizResultDao.getLastResult()
     }
 
-    suspend fun deleteResults(quizResult: QuizResult) = quizResultDao.deleteResults(quizResult)
+    suspend fun deleteResults(quizResult: List<QuizResult>) = quizResultDao.deleteResults(quizResult)
 
     suspend fun updateResults(quizResult: QuizResult) = quizResultDao.updateResults(quizResult)
 }

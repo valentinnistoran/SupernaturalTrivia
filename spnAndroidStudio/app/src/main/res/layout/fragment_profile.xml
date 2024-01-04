@@ -56,18 +56,33 @@
 
         <EditText
             android:id="@+id/usernameField"
-            android:layout_width="182dp"
-            android:layout_height="43dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
             android:fontFamily="serif"
             android:inputType="text"
             android:text="username"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/gameHistoryLabel"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/favourite_character"
             app:layout_constraintLeft_toRightOf="@id/profileImage"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <EditText
+            android:id="@+id/favourite_character"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:inputType="text"
+            android:text="favorite character"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/gameHistoryLabel"
+            app:layout_constraintLeft_toRightOf="@id/profileImage"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameField" />
 
         <TextView
             android:id="@+id/gameHistoryLabel"
@@ -149,7 +164,18 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/difficulty" />
-        
+
+        <ImageButton
+            android:id="@+id/refreshFunFactButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:onClick="@{()->profileViewModel.onClickDeleteButton()}"
+            app:layout_constraintBottom_toTopOf="@id/rank"
+            app:layout_constraintLeft_toRightOf="@id/gameHistoryLabel"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gameHistoryLabel"
+            app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
