@@ -24,7 +24,7 @@
             android:layout_width="330dp"
             android:layout_height="198dp"
             android:layout_marginTop="96dp"
-            android:src="@drawable/changing_channels"
+            app:imageUrl="@{endQuizViewModel.rank.imageUrl}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text='@{"Rank: " + endQuizViewModel.calculatedRank.toString()}'
+            android:text='@{"Rank: " + endQuizViewModel.rank.rankTitle}'
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/message"
@@ -81,8 +81,9 @@
             android:layout_marginBottom="68dp"
             android:fontFamily="serif"
             android:text="You did great!"
+            android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="19sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/back_home_button"
             app:layout_constraintEnd_toEndOf="parent"

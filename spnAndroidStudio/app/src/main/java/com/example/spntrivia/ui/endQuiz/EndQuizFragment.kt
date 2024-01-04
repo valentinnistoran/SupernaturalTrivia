@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -51,6 +53,27 @@ class EndQuizFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
+        endQuizViewModel.loadRanks(requireContext());
+        loadContent()
+    }
+
+    private fun loadContent() {
+        val picture: ImageView = binding.root.findViewById(R.id.end_quiz_picture)
+        val credit: TextView = binding.root.findViewById(R.id.picture_credit)
+        val title: TextView = binding.root.findViewById(R.id.rank)
+        val message: TextView = binding.root.findViewById(R.id.message)
+
+        endQuizViewModel.ranksList?.let { ranksList ->
+            val rank = ranksList.find { it.rankScore == endQuizViewModel.calculatedRank.value }
+
+            rank?.let {
+                endQuizViewModel.rank = rank
+                credit.text = "credit: ${rank.imageUrl}"
+                title.text = rank.rankTitle
+                message.text = rank.rankMessage
+            }
+        }
     }
 
     private fun showBackHomeDialogue() {
