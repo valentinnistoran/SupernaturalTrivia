@@ -16,8 +16,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/vetala_lore"
+        android:background="transparent"
         tools:context=".ui.trivia.TriviaFragment">
+
+        <ImageView
+            android:id="@+id/backgroundPicture"
+            android:layout_width="850dp"
+            android:layout_height="850dp"
+            android:src="@drawable/pergament"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <Button
             android:id="@+id/quit_button"
