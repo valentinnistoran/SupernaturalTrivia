@@ -30,7 +30,13 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentResult = resultList[position]
-        holder.chosenDifficulty.text = currentResult.difficulty.toString()
+        val difficultyText = when (currentResult.difficulty) {
+            1 -> "Easy"
+            2 -> "Medium"
+            3 -> "Hard"
+            else -> ""
+        }
+        holder.chosenDifficulty.text = difficultyText
         holder.calculatedScore.text = currentResult.score.toString()
         holder.calculatedRank.text = currentResult.rank.toString()
     }
