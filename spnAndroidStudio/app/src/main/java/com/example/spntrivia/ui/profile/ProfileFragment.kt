@@ -11,9 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.spntrivia.R
 import com.example.spntrivia.databinding.FragmentProfileBinding
 import com.example.spntrivia.gameHistoryDB.QuizResultsViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ProfileFragment : Fragment() {
 
@@ -37,7 +40,7 @@ class ProfileFragment : Fragment() {
         val adapter = HistoryAdapter()
         val recyclerView = binding.recyclerView
         recyclerView.adapter = adapter
-        recyclerView.layoutManager =LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
         quizResultsViewModel = ViewModelProvider(this).get(QuizResultsViewModel::class.java)
@@ -45,7 +48,33 @@ class ProfileFragment : Fragment() {
             adapter.setData(quizResult)
         })
 
+        deleteButtonObserver()
+
         return binding.root
+    }
+
+    private fun deleteButtonObserver() {
+        profileViewModel.onDeleteButtonClicked.observe(viewLifecycleOwner) { isClicked ->
+            if (isClicked) {
+                showDeleteDialogue()
+                profileViewModel.onDeleteButtonClicked.value = false
+            }
+        }
+    }
+
+    private fun showDeleteDialogue() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Delete History?")
+            .setMessage("Are you sure you want to delete your Quiz History?")
+            .setPositiveButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setNegativeButton("Yes") { _, _ ->
+                quizResultsViewModel.readAllData.observe(this, Observer { quizResult ->
+                    quizResultsViewModel.deleteQuizResult(quizResult)
+                })
+            }
+            .show()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -60,7 +89,6 @@ class ProfileFragment : Fragment() {
         val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST)
     }
-
 
     companion object {
         private const val PICK_IMAGE_REQUEST = 1

@@ -7,4 +7,8 @@ import androidx.lifecycle.ViewModel
 
 class ProfileViewModel : ViewModel() {
 
+    val onDeleteButtonClicked = MutableLiveData(false)
+    fun onClickDeleteButton() {
+        onDeleteButtonClicked.value = true
+    }
 }
