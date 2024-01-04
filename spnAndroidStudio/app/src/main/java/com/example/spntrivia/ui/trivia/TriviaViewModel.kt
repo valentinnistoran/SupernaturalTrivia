@@ -47,6 +47,7 @@ class TriviaViewModel() : ViewModel() {
 
     val questionsAnswered = MutableLiveData(1)
     val score = MutableLiveData<Int>(0)
+    var rank = MutableLiveData<String>("")
     val finalScore = MutableLiveData<Long?>(0)
     private var correctAnswer: String = ""
 
@@ -198,6 +199,7 @@ class TriviaViewModel() : ViewModel() {
         if (questionsAnswered.value == 10) {
             questionsAnswered.value = 0
             calculateScore()
+            calculateRank()
             //go to end page
         }
     }
@@ -229,8 +231,27 @@ class TriviaViewModel() : ViewModel() {
     fun confirmQuit() {
         questionsAnswered.value = 0
     }
+
     private fun calculateScore() {
         finalScore.value = score.value?.toLong()?.times(100)
+    }
+
+    private fun calculateRank() {
+        rank.value = when (score.value) {
+            0 -> "Chuck"
+            1 -> "Haunted"
+            2 -> "Baby Nephilim"
+            3 -> "Hunter in Training"
+            4 -> "Fake FBI Agent"
+            5 -> "A Hunter's Kid"
+            6 -> "Demon Slayer"
+            7 -> "Hunter"
+            8 -> "Winchester"
+            9 -> "Men of Letters"
+            10 -> "Becky"
+            else -> ""
+        }
+
     }
 
 }

@@ -38,7 +38,7 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.MyViewHolder>() {
         }
         holder.chosenDifficulty.text = difficultyText
         holder.calculatedScore.text = currentResult.score.toString()
-        holder.calculatedRank.text = currentResult.rank.toString()
+        holder.calculatedRank.text = currentResult.rankTitle
     }
 
     fun setData(result: List<QuizResult>){
