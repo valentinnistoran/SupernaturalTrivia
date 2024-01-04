@@ -46,6 +46,7 @@ class TriviaViewModel() : ViewModel() {
     val triviaQuestionLiveData = MutableLiveData<QuestionTrivia>()
 
     val questionsAnswered = MutableLiveData(1)
+    var isQuestion10 = MutableLiveData<Boolean>(false)
     val score = MutableLiveData<Int>(0)
     var rank = MutableLiveData<String>("")
     val finalScore = MutableLiveData<Long?>(0)
@@ -121,6 +122,7 @@ class TriviaViewModel() : ViewModel() {
     fun loadQuestions(context: Context, difficultyLevel: Int) {
         questionsAnswered.value = 1
         currentQuestionIndex = 0
+        isQuestion10.value = false
         levelDifficulty.value = difficultyLevel
         val fileName = when (difficultyLevel) {
             1 -> "easy_questions.json"
@@ -197,6 +199,7 @@ class TriviaViewModel() : ViewModel() {
     private fun answeredQuestions() {
         questionsAnswered.value = questionsAnswered.value?.plus(1)
         if (questionsAnswered.value == 10) {
+            isQuestion10.value = true
             questionsAnswered.value = 0
             calculateScore()
             calculateRank()
