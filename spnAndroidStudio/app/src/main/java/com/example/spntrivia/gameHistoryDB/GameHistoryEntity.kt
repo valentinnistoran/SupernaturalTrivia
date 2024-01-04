@@ -8,6 +8,6 @@ data class QuizResult(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
     val difficulty: Int?,
-    val score: Int?,
+    val score: Long?,
     val rank: Int
 )

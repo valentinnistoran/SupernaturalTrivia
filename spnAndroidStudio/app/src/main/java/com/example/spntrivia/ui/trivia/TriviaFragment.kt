@@ -101,7 +101,7 @@ class TriviaFragment : Fragment() {
 
     private fun insertDataToDatabase() {
         val chosenDifficulty = triviaViewModel.levelDifficulty.value
-        val calculatedScore = triviaViewModel.score.value //TODO: modify with the calculated score
+        val calculatedScore = triviaViewModel.finalScore.value //TODO: modify with the calculated score
         val calculatedRank = 10
 
         val quizResult = QuizResult(0, chosenDifficulty, calculatedScore, calculatedRank)

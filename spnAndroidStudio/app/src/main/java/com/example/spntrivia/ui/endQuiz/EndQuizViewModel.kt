@@ -8,7 +8,7 @@ class EndQuizViewModel : ViewModel() {
 
     val onBackHomeButtonClicked = MutableLiveData(false)
 
-    val calculatedScore = MutableLiveData(0)
+    val calculatedScore = MutableLiveData<Long?>(0)
     val chosenDifficulty = MutableLiveData(0)
     val calculatedRank = MutableLiveData(0)
 

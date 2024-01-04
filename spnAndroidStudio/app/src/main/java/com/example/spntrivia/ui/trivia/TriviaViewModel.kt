@@ -47,7 +47,7 @@ class TriviaViewModel() : ViewModel() {
 
     val questionsAnswered = MutableLiveData(1)
     val score = MutableLiveData(0)
-    val finalScore = MutableLiveData<Long>(0)
+    val finalScore = MutableLiveData<Long?>(0)
     private var correctAnswer: String = ""
 
     val timerDuration: Long = 60000
@@ -188,6 +188,7 @@ class TriviaViewModel() : ViewModel() {
         questionsAnswered.value = questionsAnswered.value?.plus(1)
         if (questionsAnswered.value == 10) {
             questionsAnswered.value = 0
+            calculateScore()
             //go to end page
         }
     }
@@ -223,8 +224,7 @@ class TriviaViewModel() : ViewModel() {
 
     //TODO: find a formula for calculating the score + make it float
     fun calculateScore() {
-        finalScore.value = (remainingTime.value?.let { score.value?.times(it) })
-        finalScore.value = finalScore.value?.div(100)
+        finalScore.value = score.value?.toLong()?.times(100)
     }
 
 }
