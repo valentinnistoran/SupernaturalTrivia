@@ -16,45 +16,38 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="transparent"
+        android:background="@drawable/table"
         tools:context=".ui.trivia.TriviaFragment">
-
-        <ImageView
-            android:id="@+id/backgroundPicture"
-            android:layout_width="850dp"
-            android:layout_height="850dp"
-            android:src="@drawable/pergament"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
 
         <Button
             android:id="@+id/quit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
+            android:layout_marginStart="40dp"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickQuitButton()}"
             android:text="Quit"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/quiz_number"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/quiz_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333" />
 
         <Button
             android:id="@+id/skip_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="28dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="12dp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickSkipButton()}"
             android:text="Skip"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/quiz_number"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/quiz_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.388" />
 
         <TextView
             android:id="@+id/quiz_number"
@@ -82,99 +75,107 @@
             android:id="@+id/quiz_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:fontFamily="serif"
             android:text='@{"Score: " + String.valueOf(triviaViewModel.score)}'
-            app:layout_constraintBottom_toTopOf="@id/quiz_image"
-            app:layout_constraintRight_toLeftOf="@id/quiz_timer"
-            app:layout_constraintStart_toStartOf="@+id/quiz_image"
-            app:layout_constraintTop_toBottomOf="@id/quiz_number" />
+            app:layout_constraintBottom_toTopOf="@+id/quiz_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.136"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/quiz_timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:fontFamily="serif"
             android:text='@{"Time:" + triviaViewModel.triviaTimerLiveData}'
-            app:layout_constraintBottom_toTopOf="@id/quiz_image"
-            app:layout_constraintEnd_toEndOf="@id/quiz_image"
-            app:layout_constraintLeft_toRightOf="@id/quiz_score"
-            app:layout_constraintTop_toBottomOf="@id/quiz_number" />
+            app:layout_constraintBottom_toTopOf="@+id/quiz_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.866"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/quiz_image"
-            android:layout_width="300dp"
-            android:layout_height="175dp"
+            android:layout_width="322dp"
+            android:layout_height="192dp"
             app:imageUrl="@{triviaViewModel.triviaQuestionLiveData.imageUrl}"
-            app:layout_constraintBottom_toTopOf="@id/quiz_question"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/quiz_timer" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.246" />
 
         <TextView
             android:id="@+id/quiz_image_credit"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:autoLink="web"
             android:fontFamily="serif"
+            android:gravity="center"
             android:text='@{"credit: " + triviaViewModel.triviaQuestionLiveData.imageUrl}'
             android:textColor="@color/white"
             android:textSize="6sp"
-            app:layout_constraintStart_toStartOf="@id/quiz_image"
-            app:layout_constraintTop_toBottomOf="@id/quiz_image" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quiz_image" />
 
         <TextView
             android:id="@+id/quiz_question"
             android:layout_width="325dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:fontFamily="serif"
+            android:gravity="center"
             android:text="@{triviaViewModel.triviaQuestionLiveData.questionText}"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/answer1"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/quiz_image" />
+            app:layout_constraintBottom_toTopOf="@+id/answer1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/answer1"
             android:layout_width="300sp"
             android:layout_height="60sp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer1Button()}"
             android:text="@{triviaViewModel.answer1}"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/answer2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quiz_question" />
+            app:layout_constraintBottom_toTopOf="@+id/answer2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/answer2"
             android:layout_width="300sp"
             android:layout_height="60sp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer2Button()}"
             android:text="@{triviaViewModel.answer2}"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/answer3"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer1" />
+            app:layout_constraintBottom_toTopOf="@+id/answer3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/answer3"
             android:layout_width="300sp"
             android:layout_height="60sp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="@color/orange"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickAnswer3Button()}"
             android:text="@{triviaViewModel.answer3}"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/answer4"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer2" />
+            app:layout_constraintBottom_toTopOf="@+id/answer4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/answer4"
@@ -185,16 +186,16 @@
             android:onClick="@{()->triviaViewModel.onClickAnswer4Button()}"
             android:text="@{triviaViewModel.answer4}"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@id/anchor"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer3" />
+            app:layout_constraintBottom_toTopOf="@+id/anchor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="582dp" />
 
         <Button
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="28dp"
+            android:layout_marginRight="40dp"
             android:backgroundTint="@color/green"
             android:fontFamily="serif"
             android:onClick="@{()->triviaViewModel.onClickNextButton()}"
@@ -203,7 +204,8 @@
             android:visibility="@{triviaViewModel.isAnswerButtonClicked()? View.VISIBLE:View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/answer4" />
+            app:layout_constraintTop_toBottomOf="@id/answer4"
+            app:layout_constraintVertical_bias="0.466" />
 
         <TextView
             android:id="@+id/answer1_color"
@@ -211,13 +213,14 @@
             android:layout_height="50sp"
             android:background="@{triviaViewModel.answerColor ? @color/green : @color/bloody_red}"
             android:elevation="8dp"
+            android:fontFamily="serif"
             android:gravity="center"
             android:text="@{triviaViewModel.answer1}"
             android:visibility="@{triviaViewModel.isAnswer1ButtonClicked()? View.VISIBLE:View.GONE}"
-            app:layout_constraintBottom_toTopOf="@id/answer2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quiz_question" />
+            app:layout_constraintBottom_toBottomOf="@+id/answer1"
+            app:layout_constraintLeft_toLeftOf="@id/answer1"
+            app:layout_constraintRight_toRightOf="@id/answer1"
+            app:layout_constraintTop_toTopOf="@id/answer1" />
 
         <TextView
             android:id="@+id/answer2_color"
@@ -225,13 +228,14 @@
             android:layout_height="50sp"
             android:background="@{triviaViewModel.answerColor ? @color/green : @color/bloody_red}"
             android:elevation="8dp"
+            android:fontFamily="serif"
             android:gravity="center"
             android:text="@{triviaViewModel.answer2}"
             android:visibility="@{triviaViewModel.isAnswer2ButtonClicked()? View.VISIBLE:View.GONE}"
-            app:layout_constraintBottom_toTopOf="@id/answer3"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer1" />
+            app:layout_constraintBottom_toBottomOf="@+id/answer2"
+            app:layout_constraintLeft_toLeftOf="@id/answer2"
+            app:layout_constraintRight_toRightOf="@id/answer2"
+            app:layout_constraintTop_toTopOf="@id/answer2" />
 
         <TextView
             android:id="@+id/answer3_color"
@@ -239,13 +243,14 @@
             android:layout_height="50sp"
             android:background="@{triviaViewModel.answerColor ? @color/green : @color/bloody_red}"
             android:elevation="8dp"
+            android:fontFamily="serif"
             android:gravity="center"
             android:text="@{triviaViewModel.answer3}"
             android:visibility="@{triviaViewModel.isAnswer3ButtonClicked()? View.VISIBLE:View.GONE}"
-            app:layout_constraintBottom_toTopOf="@id/answer4"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer2" />
+            app:layout_constraintBottom_toBottomOf="@+id/answer3"
+            app:layout_constraintLeft_toLeftOf="@id/answer3"
+            app:layout_constraintRight_toRightOf="@id/answer3"
+            app:layout_constraintTop_toTopOf="@id/answer3" />
 
         <TextView
             android:id="@+id/answer4_color"
@@ -253,18 +258,19 @@
             android:layout_height="50sp"
             android:background="@{triviaViewModel.answerColor ? @color/green : @color/bloody_red}"
             android:elevation="8dp"
+            android:fontFamily="serif"
             android:gravity="center"
             android:text="@{triviaViewModel.answer4}"
             android:visibility="@{triviaViewModel.isAnswer4ButtonClicked()? View.VISIBLE:View.GONE}"
-            app:layout_constraintBottom_toTopOf="@id/anchor"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer3" />
+            app:layout_constraintBottom_toBottomOf="@+id/answer4"
+            app:layout_constraintLeft_toLeftOf="@id/answer4"
+            app:layout_constraintRight_toRightOf="@id/answer4"
+            app:layout_constraintTop_toTopOf="@id/answer4" />
 
         <ImageView
             android:id="@+id/anchor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="6dp"
+            android:layout_height="10dp"
             android:fontFamily="serif"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
