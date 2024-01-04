@@ -35,7 +35,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="credit"
+            android:text='@{"credit: " + endQuizViewModel.rankLiveData.imageUrl.toString()}'
             android:textSize="6sp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"

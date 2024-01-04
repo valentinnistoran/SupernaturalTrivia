@@ -14,7 +14,7 @@ class EndQuizViewModel : ViewModel() {
 
     val onBackHomeButtonClicked = MutableLiveData(false)
 
-    val rankLiveData = MutableLiveData<Ranking>()
+    val rankLiveData = MutableLiveData<Ranking?>()
 
     private val lastQuizResult = MutableLiveData<QuizResult?>()
     private var ranksList: List<Ranking>? = null
@@ -25,6 +25,7 @@ class EndQuizViewModel : ViewModel() {
     }
 
     fun loadRanks(context: Context) {
+        rankLiveData.value = null
         try {
             val json: String = context.assets.open("ranking.json").bufferedReader().use {
                 it.readText()

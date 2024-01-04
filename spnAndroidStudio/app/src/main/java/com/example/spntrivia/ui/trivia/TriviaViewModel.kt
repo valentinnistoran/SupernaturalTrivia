@@ -52,7 +52,7 @@ class TriviaViewModel() : ViewModel() {
     val finalScore = MutableLiveData<Long?>(0)
     private var correctAnswer: String = ""
 
-    val timerDuration: Long = 60000
+    val timerDuration: Long = 75000
     val remainingTime = MutableLiveData<Long>()
     val triviaTimerLiveData = MutableLiveData<Long>()
     val timerFinished = MutableLiveData(false)
