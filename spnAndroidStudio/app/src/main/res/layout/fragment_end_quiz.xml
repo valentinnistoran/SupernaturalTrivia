@@ -33,11 +33,11 @@
             android:id="@+id/picture_credit"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:autoLink="web"
             android:fontFamily="serif"
             android:gravity="center"
             android:text='@{"credit: " + endQuizViewModel.rankLiveData.imageUrl}'
             android:textSize="6sp"
-            android:autoLink="web"
             app:layout_constraintEnd_toEndOf="@id/end_quiz_picture"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

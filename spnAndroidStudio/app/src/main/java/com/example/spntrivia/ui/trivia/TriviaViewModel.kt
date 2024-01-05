@@ -77,8 +77,7 @@ class TriviaViewModel() : ViewModel() {
         onSkipButtonClicked.value = true
         answeredQuestions()
         loadNextQuestion()
-        if(isQuestion10.value==true)
-        {
+        if (isQuestion10.value == true) {
             calculateScore()
             calculateRank()
         }
@@ -121,8 +120,7 @@ class TriviaViewModel() : ViewModel() {
         onNextButtonClicked.value = true
         answeredQuestions()
         loadNextQuestion()
-        if(isQuestion10.value==true)
-        {
+        if (isQuestion10.value == true) {
             calculateScore()
             calculateRank()
         }
@@ -133,6 +131,7 @@ class TriviaViewModel() : ViewModel() {
     fun loadQuestions(context: Context, difficultyLevel: Int) {
         questionsAnswered.value = 1
         currentQuestionIndex = 0
+        score.value = 0
         isQuestion10.value = false
         levelDifficulty.value = difficultyLevel
         val fileName = when (difficultyLevel) {
