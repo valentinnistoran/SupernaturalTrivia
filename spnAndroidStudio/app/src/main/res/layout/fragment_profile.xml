@@ -47,7 +47,7 @@
             android:id="@+id/profileImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@id/gameHistoryLabel"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/usernameField"
