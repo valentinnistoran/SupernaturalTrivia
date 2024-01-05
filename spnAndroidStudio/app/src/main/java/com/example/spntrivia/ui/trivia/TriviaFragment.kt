@@ -93,13 +93,15 @@ class TriviaFragment : Fragment() {
     }
 
     private fun navigateToEndQuiz() {
-        if (triviaViewModel.questionsAnswered.value == 0) {
+        if (triviaViewModel.isQuestion10.value == true) {
             insertDataToDatabase()
             findNavController().navigate(R.id.action_triviaFragment_to_endQuizFragment)
         }
     }
 
     private fun insertDataToDatabase() {
+        triviaViewModel.calculateRank()
+        triviaViewModel.calculateScore()
         val chosenDifficulty = triviaViewModel.levelDifficulty.value
         val calculatedScore = triviaViewModel.finalScore.value
         val calculatedRank = triviaViewModel.score.value
@@ -128,7 +130,9 @@ class TriviaFragment : Fragment() {
         triviaViewModel.onSkipButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 navigateToEndQuiz()
-                triviaViewModel.loadNextQuestion()
+                if (triviaViewModel.questionsAnswered.value!! <= 10) {
+                    triviaViewModel.loadNextQuestion()
+                }
                 triviaViewModel.onSkipButtonClicked.value = false
             }
 
@@ -139,7 +143,9 @@ class TriviaFragment : Fragment() {
         triviaViewModel.onNextButtonClicked.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 navigateToEndQuiz()
-                triviaViewModel.loadNextQuestion()
+                if (triviaViewModel.questionsAnswered.value!! <= 10) {
+                    triviaViewModel.loadNextQuestion()
+                }
                 triviaViewModel.onNextButtonClicked.value = false
             }
 

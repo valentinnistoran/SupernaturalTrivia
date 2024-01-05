@@ -52,19 +52,6 @@
             app:layout_constraintVertical_bias="0.388" />
 
         <TextView
-            android:id="@+id/one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="1"
-            android:textSize="16sp"
-            android:visibility="@{triviaViewModel.isQuestion10? View.VISIBLE:View.GONE}"
-            app:layout_constraintBottom_toTopOf="@id/quiz_timer"
-            app:layout_constraintEnd_toStartOf="@id/quiz_number"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/quit_button" />
-
-        <TextView
             android:id="@+id/quiz_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

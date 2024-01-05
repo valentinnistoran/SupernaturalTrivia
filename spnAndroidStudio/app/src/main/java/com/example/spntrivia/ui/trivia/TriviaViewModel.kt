@@ -76,11 +76,6 @@ class TriviaViewModel() : ViewModel() {
     fun onClickSkipButton() {
         onSkipButtonClicked.value = true
         answeredQuestions()
-        loadNextQuestion()
-        if (isQuestion10.value == true) {
-            calculateScore()
-            calculateRank()
-        }
         resetAnswerButtonStates()
     }
 
@@ -119,11 +114,6 @@ class TriviaViewModel() : ViewModel() {
     fun onClickNextButton() {
         onNextButtonClicked.value = true
         answeredQuestions()
-        loadNextQuestion()
-        if (isQuestion10.value == true) {
-            calculateScore()
-            calculateRank()
-        }
         resetAnswerButtonStates()
     }
 
@@ -210,7 +200,6 @@ class TriviaViewModel() : ViewModel() {
         questionsAnswered.value = questionsAnswered.value?.plus(1)
         if (questionsAnswered.value == 10) {
             isQuestion10.value = true
-            questionsAnswered.value = 0
             //go to end page
         }
     }
@@ -220,6 +209,7 @@ class TriviaViewModel() : ViewModel() {
         if (!isAnswer1Clicked && !isAnswer2Clicked && !isAnswer3Clicked && !isAnswer4Clicked) {
             if (selectedAnswer == correctAnswer) {
                 score.value = (score.value ?: 0) + 1
+                if(isQuestion10.value==true)
                 answerColor.value = true
             }
             when (selectedAnswer) {
@@ -243,11 +233,11 @@ class TriviaViewModel() : ViewModel() {
         questionsAnswered.value = 0
     }
 
-    private fun calculateScore() {
+    fun calculateScore() {
         finalScore.value = score.value?.toLong()?.times(100)
     }
 
-    private fun calculateRank() {
+    fun calculateRank() {
         rank.value = when (score.value) {
             0 -> "Chuck"
             1 -> "Haunted"
