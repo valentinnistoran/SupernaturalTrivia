@@ -182,5 +182,29 @@
     "wrongAnswer1": "Bobby Singer",
     "wrongAnswer2": "Jimmy Novak",
     "wrongAnswer3": "Charlie Bradbury"
+  },
+  {
+    "questionText": "Who is the King of Hell?",
+    "imageUrl": "https://akns-images.eonline.com/eol_images/Entire_Site/2015113/rs_560x415-150213163123-560-wwk-supernatural.jw.21315.jpg",
+    "correctAnswer": "Crowley",
+    "wrongAnswer1": "Azazel",
+    "wrongAnswer2": "Dean",
+    "wrongAnswer3": "Belphegor"
+  },
+  {
+    "questionText": "What is the name of the character from the screenshot above?",
+    "imageUrl": "https://1.bp.blogspot.com/-piLB_rTmQWo/X4iEdz3CGbI/AAAAAAABFNA/n8SChgTuNx8DH6za5iu_cT4ckPy1bT__gCLcBGAsYHQ/s975/Supernatural-Charlie.jpg",
+    "correctAnswer": "Charlie Bradbury",
+    "wrongAnswer1": "Krissy Chambers",
+    "wrongAnswer2": "Claire Novak",
+    "wrongAnswer3": "Alex Jones"
+  },
+  {
+    "questionText": "Who is Castiel's vessel?",
+    "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/5/54/JamesNovak4x20.png/revision/latest?cb=20190428023342",
+    "correctAnswer": "Jimmy Novak",
+    "wrongAnswer1": "Chuck Shurley",
+    "wrongAnswer2": "Garth Fitzgerald IV",
+    "wrongAnswer3": "Gordon Walker"
   }
 ]

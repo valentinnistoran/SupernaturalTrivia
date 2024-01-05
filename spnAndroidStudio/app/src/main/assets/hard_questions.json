@@ -130,7 +130,7 @@
   {
     "questionText": "Who is responsible for creating the Leviathans, and what is their original purpose?",
     "imageUrl": "https://i.pinimg.com/736x/a0/62/d0/a062d080bdc6c6fa036408de7cfe7a28.jpg",
-    "correctAnswer": "God created them as the first beasts, but they became uncontrollable",
+    "correctAnswer": "God created them as first beasts",
     "wrongAnswer1": "Lucifer created them to serve him in the war",
     "wrongAnswer2": "The Men of Letters experimented with creating powerful creatures",
     "wrongAnswer3": "Death created them to maintain balance in the universe"
@@ -198,5 +198,53 @@
     "wrongAnswer1": "Dean killed her",
     "wrongAnswer2": "She got locked up again",
     "wrongAnswer3": "She sacrificed herself in order to save the world"
+  },
+  {
+    "questionText": "What is the final trial to close the gates of Hell?",
+    "imageUrl": "https://www.thewinchesterfamilybusiness.com/wp-content/uploads/2021/08/823_SPN_1347.jpg",
+    "correctAnswer": "Cure a demon",
+    "wrongAnswer1": "Save an innocent soul from Hell and deliver it to Heaven",
+    "wrongAnswer2": "Lock yourself in Hell",
+    "wrongAnswer3": "Kill a Hellhound and bathe in its blood"
+  },
+  {
+    "questionText": "When was Castiel's last death?",
+    "imageUrl": "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Castiel.Supernatural.webp",
+    "correctAnswer": "After confessing his love to Dean",
+    "wrongAnswer1": "After releasing the leviathans",
+    "wrongAnswer2": "After Jack's birth",
+    "wrongAnswer3": "After staying too close to Chuck"
+  },
+  {
+    "questionText": "What is the actor's name that plays Dean Winchester?",
+    "imageUrl": "https://variety.com/wp-content/uploads/2021/10/jensen-ackles.jpg?w=1000",
+    "correctAnswer": "Jensen Ackles",
+    "wrongAnswer1": "Jared Padaleki",
+    "wrongAnswer2": "Misha Collins",
+    "wrongAnswer3": "Mark Sheppard"
+  },
+  {
+    "questionText": "What is the actor's name that plays Sam Winchester?",
+    "imageUrl": "https://media.zenfs.com/en/tvline.com/b8059865d09cb1877be720c84fc0b05d",
+    "correctAnswer": "Jared Padaleki",
+    "wrongAnswer1": "Jensen Ackles",
+    "wrongAnswer2": "Misha Collins",
+    "wrongAnswer3": "Mark Sheppard"
+  },
+  {
+    "questionText": "What is the actor's name that plays Castiel?",
+    "imageUrl": "https://media.them.us/photos/6266cfd5675dc1e89329a3c0/16:9/w_1280,c_limit/1185500470",
+    "correctAnswer": "Misha Collins",
+    "wrongAnswer1": "Jared Padaleki",
+    "wrongAnswer2": "Jensen Aclkes",
+    "wrongAnswer3": "Mark Sheppard"
+  },
+  {
+    "questionText": "What is the actor's name that plays Crowley?",
+    "imageUrl": "https://img.kleinezeitung.at/public/incoming/c0c6qh-imago0072446316h.jpg/alternates/WIDE_1200/imago0072446316h.jpg",
+    "correctAnswer": "Mark Sheppard",
+    "wrongAnswer1": "Jared Padaleki",
+    "wrongAnswer2": "Misha Collins",
+    "wrongAnswer3": "Jensen Ackles"
   }
 ]
