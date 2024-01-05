@@ -111,8 +111,6 @@ class TriviaFragment : Fragment() {
             QuizResult(0, chosenDifficulty, calculatedScore, calculatedRank, calculatedRankText)
 
         quizResultsViewModel.addQuizResult(quizResult)
-        Toast.makeText(requireContext(), "Added Successfully", Toast.LENGTH_LONG).show()
-
     }
 
 

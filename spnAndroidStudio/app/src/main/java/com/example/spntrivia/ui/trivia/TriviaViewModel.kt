@@ -209,7 +209,6 @@ class TriviaViewModel() : ViewModel() {
         if (!isAnswer1Clicked && !isAnswer2Clicked && !isAnswer3Clicked && !isAnswer4Clicked) {
             if (selectedAnswer == correctAnswer) {
                 score.value = (score.value ?: 0) + 1
-                if(isQuestion10.value==true)
                 answerColor.value = true
             }
             when (selectedAnswer) {
