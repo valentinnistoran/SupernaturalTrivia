@@ -106,7 +106,7 @@ class SettingsFragment : Fragment() {
                     action = Intent.ACTION_SEND
                     putExtra(
                         Intent.EXTRA_TEXT,
-                        "Check out my new app, SPN TRIVIA! https://docs.google.com/document/d/1Dhmuhbp97Jo7A0QBzf4LvDxrnO-l2MrWDXZPyNqtNIg/edit?usp=sharing"
+                        "Check out my new app, SPN TRIVIA! https://drive.google.com/drive/folders/1mBju2gMaUyAae3knBsktqzkPBd1N0H8P"
                     )
                     type = "text/plain"
                 }

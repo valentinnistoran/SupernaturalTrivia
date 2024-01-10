@@ -138,10 +138,10 @@
   {
     "questionText": "In what order did the Winchester brothers collect the Rings of the Horsemen in Supernatural?",
     "imageUrl": "https://static.wikia.nocookie.net/supernatural/images/7/7f/4Rings.jpg/revision/latest?cb=20120624235846",
-    "correctAnswer": "War's ring, Famine's ring, Pestilence's ring, and Death's ring",
-    "wrongAnswer1": "Pestilence's ring, Famine's ring, Death's ring, and War's ring",
-    "wrongAnswer2": "Pestilence's ring, Death's ring, Famine's ring, and War's ring",
-    "wrongAnswer3": "Death's ring, Famine's ring, War's ring, and Pestilence's ring"
+    "correctAnswer": "War's ring, Famine's ring, Pestilence's ring, Death's ring",
+    "wrongAnswer1": "Pestilence's ring, Famine's ring, Death's ring, War's ring",
+    "wrongAnswer2": "Pestilence's ring, Death's ring, Famine's ring, War's ring",
+    "wrongAnswer3": "Death's ring, Famine's ring, War's ring, Pestilence's ring"
   },
   {
     "questionText": "What is the name of this weapon?",
